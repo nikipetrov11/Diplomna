@@ -1,0 +1,191 @@
+{% extends 'new-base.html' %}
+
+{% block content %}
+    <!-- Loader -->
+    <div id="loader-wrapper">
+        <div class="loader">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="subline"></div>
+            <div class="subline"></div>
+            <div class="subline"></div>
+            <div class="subline"></div>
+            <div class="subline"></div>
+            <div class="loader-circle-1">
+                <div class="loader-circle-2"></div>
+            </div>
+            <div class="needle"></div>
+            <div class="loading">Зареждане</div>
+        </div>
+    </div>
+    <!-- //Loader -->
+    <!-- Content  -->
+    <div id="pageTitle">
+        <div class="container">
+            <!-- Breadcrumbs Block -->
+            <div class="breadcrumbs">
+                <ul class="breadcrumb">
+                    <li><a href="{% url 'index' %}">Начало</a></li>
+                    <li>За нас</li>
+                </ul>
+            </div>
+            <!-- //Breadcrumbs Block -->
+            <h1>За <span class="color">Нас</span></h1>
+        </div>
+    </div>
+    <div id="pageContent">
+        <div class="block">
+            <div class="pad-big"></div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-7">
+                        <img src="../static/images/autofix.jpg" alt="" class="img-responsive">
+                    </div>
+                    <div class="divider visible-sm visible-xs"></div>
+                    <div class="col-md-5">
+                        <h4><i>Основана преди 15 години в гр. Пловдив, търговска марка Auto Fix е специализирана в
+                            бързото обслужване на автомобили.</i></h4>
+                        <p>Компанията разчита и на широк сегмент от гуми, масла, акумулатори и авточасти с едни от
+                            най-добрите цени на българския пазар.</p>
+                        <p>Мисията ни винаги е била да следваме и въвеждаме най-добрите в международен аспект
+                            организационни практики.</p>
+                        <p>Центровете за обслужване на Auto Fix са оборудвани с последно поколение машини и
+                            специализирани инструменти, целящи многократно намаляване на времетраенето на определени
+                            дейности по обслужването на автомобила.</p>
+                        <p>Капацитетът им на обслужване позволява над 180 автомобила на ден за смяна на гуми на общо 9
+                            сервизни клетки, над 90 автомобила за ремонт на общо 13 подемника и над 60 реглажа на 3
+                            стенда за регулиране на геометрия.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Owners Block -->
+        <div class="block">
+            <div class="container">
+                <h2 class="h-lg text-center">Запознайте се с <span class="color">Собствениците</span></h2>
+                <p class="info text-center">Ние се отнасяме към нашите клиенти така, както вие искате да се отнасят с
+                    вас.</p>
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="person person-hor">
+                            <div class="image image-scale-color"><img src="../static/images/about-img-1.jpg" alt=""
+                                                                      class="img-responsive"/>
+                                <div class="hover"></div>
+                            </div>
+                            <div class="person-info">
+                                <h5 class="name">Гергана Стефанова</h5>
+                                <h6 class="position">Съсобственик и основател от 2008</h6>
+                                <div class="text">Сертифициранa от ASE магистърска степен техник, посещава гимназия и
+                                    съсредоточава обучението си към автомобилна кариера.
+                                </div>
+                                <div class="link">
+                                    <a class="icon icon-facebook-logo" href="#"></a>
+                                    <a class="icon icon-twitter-logo" href="#"></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="divider visible-xs"></div>
+                    <div class="col-sm-6">
+                        <div class="person person-hor">
+                            <div class="image image-scale-color"><img src="../static/images/about-img-2.jpg" alt=""
+                                                                      class="img-responsive"/>
+                                <div class="hover"></div>
+                            </div>
+                            <div class="person-info">
+                                <h5 class="name">Георги Стефанов</h5>
+                                <h6 class="position">Съсобственик и основател от 2008</h6>
+                                <div class="text">Магистърска степен по бизнес и развитие в икономиката, съсредоточава
+                                    се към автомобилна кариера.
+                                </div>
+                                <div class="link">
+                                    <a class="icon icon-facebook-logo" href="#"></a>
+                                    <a class="icon icon-twitter-logo" href="#"></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="divider-lg"></div>
+                <p>Те са членове на Организацията за по-добър бизнес, Бизнес асоциацията в Пловдив, Бизнес асоциацията в
+                    София и Камарата на бизнес конгреса, Гергана и Георги се погрижиха да се обградят със служители,
+                    които споделят същата визия, ценности, отдаденост и професионализъм, които предлагат на своите
+                    клиенти. Ето защо те подбраха персонала си, за да ви уверят, че вие и вашето превозно средство сте в
+                    най-добрата грижа. Всички служители тук в Auto Fix Пловдив са много честни, усърдни, най-отдадените
+                    хора, които някога ще срещнете.</p>
+            </div>
+        </div>
+        <!-- //Owners Block -->
+        <!-- Team Block -->
+        <div class="block">
+            <div class="container">
+                <h2 class="h-lg text-center">Част от нашият <span class="color">Екип</span></h2>
+                <p class="info text-center">Запознайте се с нашите специалисти от Автосервиза</p>
+                <p>Нашият екип е специализиран в много различни видове превозни средства и тъй като те работят върху
+                    по-голямо разнообразие от превозни средства от колегите си дилъри, техният общ опит също е по-голям.
+                    Работейки върху много марки и модели, на нашите техници може да се разчита правилно да
+                    диагностицират трудни ремонти и други проблеми. С напредването на автомобилната технология нашият
+                    екип непрекъснато актуализира своето образование и умения. </p>
+                <div class="row person-carousel">
+                    <div class="col-sm-6 col-md-3">
+                        <div class="person">
+                            <div class="image image-scale-color"><img src="../static/images/person-01.jpg" alt=""
+                                                                      class="img-responsive"/>
+                                <div class="hover"></div>
+                            </div>
+                            <h5 class="name">Даниел Стефанов</h5>
+                            <h6 class="position">Механик ходова част</h6>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-md-3">
+                        <div class="person">
+                            <div class="image image-scale-color"><img src="../static/images/person-02.jpg" alt=""
+                                                                      class="img-responsive"/>
+                                <div class="hover"></div>
+                            </div>
+                            <h5 class="name">Иван Иванов</h5>
+                            <h6 class="position">Механик масла и филтри</h6>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-md-3">
+                        <div class="person">
+                            <div class="image image-scale-color"><img src="../static/images/person-03.jpg" alt=""
+                                                                      class="img-responsive"/>
+                                <div class="hover"></div>
+                            </div>
+                            <h5 class="name">Милен Калвачев</h5>
+                            <h6 class="position">Механик двигатели</h6>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-md-3">
+                        <div class="person">
+                            <div class="image image-scale-color"><img src="../static/images/person-04.jpg" alt=""
+                                                                      class="img-responsive"/>
+                                <div class="hover"></div>
+                            </div>
+                            <h5 class="name">Бисер Симеонов</h5>
+                            <h6 class="position">Гуми и стент</h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- //Team Block -->
+        <div class="block">
+            <div class="text-center">
+                <h2 class="h-lg">Нуждаете се от помощ за вашия автомобил? <span class="color">Ще го оправим</span></h2>
+                <p class="info">Ние сме специализирани в отстраняването на щети при инциденти на превозни средства.
+                    Всъщност ние сме втората по големина мрежа за ремонт на щети при инциденти.</p>
+                <h2 class="h-phone">Тел: +359 882 366 633</h2>
+                <div class="btn-inline">
+                    <a class="btn btn-invert" href="{% url 'service_request' %}"><span>Запазете час</span></a>
+                    <a class="btn" href="{% url 'contacts' %}"><span>За контакт с нас</span></a></div>
+            </div>
+        </div>
+    </div>
+    <!-- // Content  -->
+{% endblock %}

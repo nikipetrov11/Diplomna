@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="text-start" style="margin-left: 0.5%; margin-top: 0.5%;">
+        <a href="{% url 'admin_service_request_list' %}" class="btn btn-primary btn-lg text">Back</a>
+    </div>
+    <div class="text-center">
+        <div class="bg-white badge text-wrap" style="color: black;">
+            <h1 class="text-center">Request from {{ service_request.full_name }}</h1>
+        </div>
+    </div>
+
+    <div class="text-center" style="margin-top: 2%">
+        <div class="bg-white badge text-wrap fs-3" style="color: black;">
+            {% if service_request.has_user %}
+                <p>User: {{ service_request.user }}</p>
+            {% endif %}
+            <p>Email: {{ service_request.email }}</p>
+            <p>Phone: {{ service_request.phone }}</p>
+            <p>Text: {{ service_request.request_text }}</p>
+        </div>
+    </div>
+
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit" name="toggle_status">
+            {% if service_request.is_seen %}
+                This request is marked as seen!
+            {% else %}
+                Click to mark as seen.
+            {% endif %}
+        </button>
+    </form>
+
+{% endblock %}

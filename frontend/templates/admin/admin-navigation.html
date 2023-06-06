@@ -1,0 +1,31 @@
+{% load static %}
+
+<div class="dashboard_menu">
+    <ul class="nav nav-tabs border-0 flex-column" role="tablist">
+        <li class="nav-item">
+            <a class="nav-link active" id="dashboard-tab" href="{% url 'admin_panel' %}"
+               aria-controls="dashboard" aria-selected="false">
+                Статистика</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" id="car-list-tab" href="{% url 'admin_car_list' %}" role="tab"
+               aria-controls="car-list" aria-selected="false">
+                Всички коли</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" id="add-new-car-tab" href="{% url 'admin_add_car' %}"
+               aria-controls="add-new-car" aria-selected="true">
+                Добави кола</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" id="requests-tab" href="{% url 'not_seen_admin_service_request_list' %}"
+               aria-controls="requests" aria-selected="true">
+                Заявки за сервиз</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" id="account-detail-tab" href="{% url 'admin_account_details' %}"
+               aria-controls="account-detail" aria-selected="true">
+                Профил</a>
+        </li>
+    </ul>
+</div>

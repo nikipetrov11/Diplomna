@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+{% load static %}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Car Repair Shop</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
+            crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="{% static '/css/main.css' %}">
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+            <li class="nav-item">
+                <a class="nav-link fs-4" href="{% url 'index' %}">Home</a>
+            </li>
+            {% if user.is_superuser %}
+                <li class="nav-item">
+                    <a class="nav-link fs-4" href="{% url 'admin_car_list' %}">Car List</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link fs-4" href="{% url 'invited_user_requests_list' %}">Invited user requests</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link fs-4" href="{% url 'admin_add_car' %}">Add Car</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link fs-4" href="{% url 'admin_service_request_list' %}">Requests</a>
+                </li>
+            {% endif %}
+            <li class="nav-item">
+                <a class="nav-link fs-4" href="{% url 'service-request' %}">Make Request</a>
+            </li>
+            {% if user.is_authenticated %}
+                <li class="nav-item">
+                    <a class="nav-link fs-4" href="{% url 'invited-user-request' %}">Invited by admin ?</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link fs-4" href="{% url 'logout' %}">logout</a>
+                </li>
+            {% else %}
+                <li class="nav-item">
+                    <a class="nav-link fs-4" href="{% url 'login' %}">Login</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link fs-4" href="{% url 'register' %}">Register</a>
+                </li>
+            {% endif %}
+            <li class="nav-item" style="margin-left: 5rem">
+                {% if user.is_authenticated %}
+                    <h3>Logged in as: {{ user.username }}</h3>
+                {% else %}
+                    <h3>Not logged</h3>
+                {% endif %}
+            </li>
+        </ul>
+    </div>
+</nav>
+
+
+<div class="car_shop">
+    {% block content %}
+    {% endblock %}
+</div>
+
+
+</body>
+</html>

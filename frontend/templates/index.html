@@ -1,0 +1,1209 @@
+{% extends 'new-base.html' %}
+
+{% block content %}
+    <!-- Loader -->
+    <div id="loader-wrapper">
+        <div class="loader">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="subline"></div>
+            <div class="subline"></div>
+            <div class="subline"></div>
+            <div class="subline"></div>
+            <div class="subline"></div>
+            <div class="loader-circle-1">
+                <div class="loader-circle-2"></div>
+            </div>
+            <div class="needle"></div>
+            <div class="loading">Зареждане</div>
+        </div>
+    </div>
+    <!-- //Loader -->
+    <!-- Slider -->
+    <div id="mainSliderWrapper">
+        <div id="mainSlider">
+            <div class="slide">
+                <div class="img--holder" style="background-image: url(../static/images/slider/slide1.jpg);"></div>
+                <div class="slide-content center">
+                    <div class="vert-wrap container">
+                        <div class="vert">
+                            <div class="container">
+                                <h4 data-animation="zoomIn" data-animation-delay="0.5s">Извършване на всякакви ремонти
+                                    по
+                                    автомобила</h4>
+                                <h3 data-animation="scaleOut" data-animation-delay="0.2s">Имате нужда от ремонт?</h3>
+                                <p class="hidden-xs" data-animation="fadeIn" data-animation-delay="0.9s">При нас ще
+                                    откриете
+                                    добро обслужване и качествени ремонти</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="slide">
+                <div class="img--holder" style="background-image: url(../static/images/slider/slide2.jpg);"></div>
+                <div class="slide-content container left">
+                    <div class="vert-wrap">
+                        <div class="vert">
+                            <div class="container">
+                                <h4 data-animation="fadeInLeft" data-animation-delay="0.2s">Сервизна подръжка</h4>
+                                <h3 data-animation="flipInX" data-animation-delay="0.8s">Комплексни услуги</h3>
+                                <h3 data-animation="flipInX" data-animation-delay="1.2s">за вашият автомобил</h3>
+                                <p class="hidden-xs" data-animation="fadeIn" data-animation-delay="1.5s">Извършване
+                                    сервизно
+                                    обслужване на вашия автомобил</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="slide">
+                <div class="img--holder" style="background-image: url(../static/images/slider/slide3.jpg);"></div>
+                <div class="slide-content container center">
+                    <div class="vert-wrap">
+                        <div class="vert">
+                            <div class="container">
+                                <h4 data-animation="zoomIn" data-animation-delay="0.8s">Продажба на гуми</h4>
+                                <h3 data-animation="fadeInUp" data-animation-delay="0.2s">Всякакви размери гуми</h3>
+                                <h3 data-animation="fadeInUp" data-animation-delay="0.5s">висок клас</h3>
+                                <p class="hidden-xs" data-animation="fadeIn" data-animation-delay="1.2s">Разгледайте и
+                                    изберете най подходящите гуми за вашия автомобил</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Slider -->
+    <!-- Content  -->
+    <div id="pageContent">
+        <!-- Under Slider Banner -->
+        <div class="block banner-under-slider hidden-xs">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-7 col-md-6">
+                        <div class="row row-flex">
+                            <div class="col-sm-5 col-md-6 col-title">
+                                <h2>Адекватно </h2>
+                                <h2 class="h-lg text-right"><span class="color">Обслужване</span></h2>
+                            </div>
+                            <div class="col-sm-7 col-md-6">
+                                <ul>
+                                    <li>коректност</li>
+                                    <li>бързина и сигурност</li>
+                                    <li>добра организация</li>
+                                    <li>персонално отношение</li>
+                                    <li>работим и в събота</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-5 col-md-6">
+                        <div class="row row-flex">
+                            <div class="col-md-6 col-lg-8 col-img">
+                                <div class="negative-margin"><img src="../static/images/banner-key.png"
+                                                                  class="img-responsive"
+                                                                  alt="">
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-lg-4 action hidden-xs">
+                                <a href="{% url 'index_service_info' %}" class="btn btn-full btn-border"><span>Нашите услуги</span></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- // Under Slider Banner -->
+        <!-- Services Banner Block -->
+        <div class="block">
+            <div class="container">
+                <div class="text-center">
+                    <h2 class="h-lg">Предстои ви ремонт?</h2>
+                    <p class="info">Предлагаме пълна поддръжка и ремонт</p>
+                </div>
+                <div class="services-block services-carousel hidden-xs">
+                    <div class="service">
+                        <div class="image"><img src="../static/images/service-1-bg.png" alt="#"></div>
+                        <div class="caption">
+                            <div class="vert-wrap">
+                                <div class="vert">
+                                    <h3>СМЯНА НА МАСЛО</h3>
+                                    <div class="text">Извършваме смяна на масло, на автомобили леки и товарни.</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="service">
+                        <a href="{% url '1_service_info' %}" class="image image-scale"><img
+                                src="../static/images/service-2-bg.jpg" alt="#"></a>
+                    </div>
+                    <div class="service">
+                        <div class="image"><img src="../static/images/service-3-bg.jpg" alt="#"></div>
+                        <div class="caption">
+                            <div class="vert-wrap">
+                                <div class="vert">
+                                    <h3>КОМПЮТЪРНА </h3>
+                                    <h2>Диагностика</h2>
+                                    <div class="text">Диагностика на нови и стари автомобили,<br> разполагаме с няколко
+                                        вида
+                                        автодиагностични софтуера
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="service">
+                        <a href="{% url '2_service_info' %}" class="image image-scale"><img
+                                src="../static/images/service-4-bg.jpg" alt="#"></a>
+                    </div>
+                    <div class="service dark">
+                        <div class="image"><img src="../static/images/service-5-bg.jpg" alt="#"></div>
+                        <div class="caption">
+                            <div class="vert-wrap">
+                                <div class="vert">
+                                    <h3>Смяна</h3>
+                                    <h2>На дискове и спирачки</h2>
+                                    <div class="text">Смяна на дискове и спирачки както и шлайфане на дискове</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="service">
+                        <a href="{% url '9_service_info' %}" class="image image-scale"><img
+                                src="../static/images/service-6-bg.jpg" alt="#"></a>
+                    </div>
+                </div>
+                <div class="services-block services-carousel visible-xs">
+                    <div class="service">
+                        <div class="image"><img src="../static/images/service-1-bg.png" alt="#"></div>
+                        <div class="caption">
+                            <div class="vert-wrap">
+                                <div class="vert">
+                                    <h3>Mantenimiento</h3>
+                                    <h2>Preventivo</h2>
+                                    <div class="text">Sincronice regularmente su vehículo, así ahorra combustible y
+                                        dinero a
+                                        largo plazo
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="service">
+                        <div class="image"><img src="../static/images/service-3-bg.jpg" alt="#"></div>
+                        <div class="caption">
+                            <div class="vert-wrap">
+                                <div class="vert">
+                                    <h3>Reparaciones</h3>
+                                    <h2>Comunes</h2>
+                                    <div class="text">Reparamos los sistemas de su auto,
+                                        <br>realizamos reparaciones de sistema electrónico
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="service dark">
+                        <div class="image"><img src="../static/images/service-5-bg.jpg" alt="#"></div>
+                        <div class="caption">
+                            <div class="vert-wrap">
+                                <div class="vert">
+                                    <h3>Frenos</h3>
+                                    <h2>Mantenimiento</h2>
+                                    <div class="text">Los frenos hacen parte de la seguridad
+                                        <br> activa de su auto, es por ello
+                                        <br> que debe revisarlo constantemente
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- //Services Banner Block -->
+        <!-- Services List Block -->
+        <div class="block bg-1">
+            <div class="container">
+                <h2 class="h-lg text-center">Нашите <span class="color">Услуги</span></h2>
+                <p class="info text-center">По-долу са някои от услуги за вашия автомобил, които предлагаме в Ауто Фикс
+                    -
+                    Пловдив:</p>
+                <div class="row" id="slideMobile">
+                    <div class="col-sm-6 col-md-4">
+                        <ul class="marker-list">
+                            <li>Автомобилна диагностика</li>
+                            <li>DTC сканиране на грешки</li>
+                            <li>Поддръжка на електронна система за впръскване</li>
+                            <li>Поддръжка, препоръчана от производителя</li>
+                            <li>Mantenimiento Recomendado por el Fabricante</li>
+                            <li>Поддръжка климатик</li>
+                            <li>Ремонт на климатичната система</li>
+                            <li>Ремонт на горивната система</li>
+                        </ul>
+                    </div>
+                    <div class="col-sm-6 col-md-4 view-more-mobile">
+                        <ul class="marker-list">
+                            <li>Тест на сензорите</li>
+                            <li>Поддръжка на окачване</li>
+                            <li>Проверка на стартера и алтернатора</li>
+                            <li>Автомобилна експертиза</li>
+                            <li>Поддръжка на въздушни възглавници</li>
+                            <li>Смяна на разпределителен ремък</li>
+                            <li>Обща превантивна поддръжка</li>
+                            <li>Инспекция на емисиите</li>
+                        </ul>
+                    </div>
+                    <div class="col-sm-6 col-md-4 view-more-mobile view-more-tablet">
+                        <ul class="marker-list">
+                            <li>Поддръжка на ABS система</li>
+                            <li>Диагностика на акумулаторната батерия</li>
+                            <li>Смяна на масло</li>
+                            <li>Смяна на съединител</li>
+                            <li>Поддръжка на окачване и кормилно управление</li>
+                            <li>Смяна на гуми</li>
+                            <li>Cambio de Embrague</li>
+                            <li>ГТП - Пловдив</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="text-center"><a href="#slideMobile" class="view-more-link color"><span class="more">Todos los Servicios</span><span
+                        class="less">Ocultar Todos los Servicios</span></a>
+                </div>
+            </div>
+        </div>
+        <!-- //Services List Block -->
+        <!-- Block -->
+        <div class="block">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 col-lg-5">
+                        <div class="vertical-tab-container" id="tabForm">
+                            <div class="vertical-tab-menu">
+                                <div class="list-group">
+                                    <a href="#" class="list-group-item active text-center">
+                                        <span>Гуми</span>
+                                        <i class="icon icon-car-wheel"></i>
+                                    </a>
+                                    <a href="#" class="list-group-item text-center">
+                                        <span>Масло</span>
+                                        <i class="icon icon-oil"></i>
+                                    </a>
+                                    <a href="#" class="list-group-item text-center">
+                                        <span>Акумолатор</span>
+                                        <i class="icon icon-power"></i>
+                                    </a>
+                                    <a href="#" class="list-group-item text-center">
+                                        <span>Спирачки</span>
+                                        <i class="icon icon-disc-brake"></i>
+                                    </a>
+                                    <a href="#" class="list-group-item text-center">
+                                        <span>Ходова част</span>
+                                        <i class="icon icon-balance"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="vertical-tab">
+                                <!-- Tires section -->
+                                <div class="vertical-tab-content active">
+                                    <h3>Запитване за гуми</h3>
+                                    <p class="comment">Всички полета са задължителни</p>
+                                    <form id="tab1-form">
+                                        <div class="form-group">
+                                            <div class="select-wrapper">
+                                                <select name="select1" class="input-custom">
+                                                    <option value="">Година</option>
+                                                    <option value="">Под 2000г.</option>
+                                                    <option value="">2000</option>
+                                                    <option value="">2001</option>
+                                                    <option value="">2002</option>
+                                                    <option value="">2003</option>
+                                                    <option value="">2004</option>
+                                                    <option value="">2005</option>
+                                                    <option value="">2006</option>
+                                                    <option value="">2007</option>
+                                                    <option value="">2008</option>
+                                                    <option value="">2009</option>
+                                                    <option value="">2010</option>
+                                                    <option value="">2011</option>
+                                                    <option value="">2012</option>
+                                                    <option value="">2013</option>
+                                                    <option value="">2014</option>
+                                                    <option value="">2015</option>
+                                                    <option value="">2016</option>
+                                                    <option value="">2017</option>
+                                                    <option value="">2018</option>
+                                                    <option value="">2019</option>
+                                                    <option value="">2020</option>
+                                                    <option value="">2022</option>
+                                                    <option value="">2023</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="select-wrapper">
+                                                <select name="select2" class="input-custom">
+                                                    <option value="">Марка</option>
+                                                    <option value="Alfa Romeo">Alfa Romeo</option>
+                                                    <option value="Aston Martin">Aston Martin</option>
+                                                    <option value="Audi">Audi</option>
+                                                    <option value="Autovaz">Autovaz</option>
+                                                    <option value="Bentley">Bentley</option>
+                                                    <option value="Bmw">Bmw</option>
+                                                    <option value="Cadillac">Cadillac</option>
+                                                    <option value="Chevrolet">Chevrolet</option>
+                                                    <option value="Chrysler">Chrysler</option>
+                                                    <option value="Citroen">Citroen</option>
+                                                    <option value="Daihatsu">Daihatsu</option>
+                                                    <option value="Dodge">Dodge</option>
+                                                    <option value="Ferrari">Ferrari</option>
+                                                    <option value="Fiat">Fiat</option>
+                                                    <option value="Ford">Ford</option>
+                                                    <option value="Honda">Honda</option>
+                                                    <option value="Hummer">Hummer</option>
+                                                    <option value="Hyundai">Hyundai</option>
+                                                    <option value="Isuzu">Isuzu</option>
+                                                    <option value="Jaguar">Jaguar</option>
+                                                    <option value="Jeep">Jeep</option>
+                                                    <option value="Kia">Kia</option>
+                                                    <option value="Lamborghini">Lamborghini</option>
+                                                    <option value="Lancia">Lancia</option>
+                                                    <option value="Land Rover">Land Rover</option>
+                                                    <option value="Lexus">Lexus</option>
+                                                    <option value="Lotus">Lotus</option>
+                                                    <option value="Maserati">Maserati</option>
+                                                    <option value="Mazda">Mazda</option>
+                                                    <option value="Mercedes Benz">Mercedes Benz</option>
+                                                    <option value="MG">MG</option>
+                                                    <option value="Mini">Mini</option>
+                                                    <option value="Mitsubishi">Mitsubishi</option>
+                                                    <option value="Morgan">Morgan</option>
+                                                    <option value="Nissan">Nissan</option>
+                                                    <option value="Opel">Opel</option>
+                                                    <option value="Peugeot">Peugeot</option>
+                                                    <option value="Porsche">Porsche</option>
+                                                    <option value="Renault">Renault</option>
+                                                    <option value="Rolls Royce">Rolls Royce</option>
+                                                    <option value="Rover">Rover</option>
+                                                    <option value="Saab">Saab</option>
+                                                    <option value="Seat">Seat</option>
+                                                    <option value="Skoda">Skoda</option>
+                                                    <option value="Smart">Smart</option>
+                                                    <option value="Ssangyong">Ssangyong</option>
+                                                    <option value="Subaru">Subaru</option>
+                                                    <option value="Suzuki">Suzuki</option>
+                                                    <option value="Tata">Tata</option>
+                                                    <option value="Toyota">Toyota</option>
+                                                    <option value="Volkswagen">Volkswagen</option>
+                                                    <option value="Volvo">Volvo</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <div><input type="text" name="model" class="form-control input-custom"
+                                                        value=""
+                                                        placeholder="Модел" required></div>
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="select-wrapper">
+                                                <select name="select4" class="input-custom">
+                                                    <option value="">Тип</option>
+                                                    <option value="">Седан</option>
+                                                    <option value="">Хечбек</option>
+                                                    <option value="">Купе</option>
+                                                    <option value="">Комби</option>
+                                                </select>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <div><input type="text" name="size" class="form-control input-custom"
+                                                        value=""
+                                                        placeholder="Размер гуми" required></div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <div class="row">
+                                                <div class="col-xs-7">
+                                                    <div class="form-group">
+                                                        <div class="select-wrapper">
+                                                            <select name="select5" class="input-custom">
+                                                                <option value="">Брой гуми</option>
+                                                                <option value="">1</option>
+                                                                <option value="">2</option>
+                                                                <option value="">3</option>
+                                                                <option value="">4</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <a class="btn btn-lg btn-full" data-toggle="modal"
+                                           data-target="#tab1Modal"><span>Цена на гумите</span></a>
+                                    </form>
+                                </div>
+                                <!-- Oil section -->
+                                <div class="vertical-tab-content">
+                                    <h3>Смяна на масло</h3>
+                                    <p class="comment">Всички полета са задължителни</p>
+                                    <form id="tab2-form">
+                                        <div class="form-group">
+                                            <div class="select-wrapper">
+                                                <select name="select1" class="input-custom">
+                                                    <option value="">Година</option>
+                                                    <option value="">Под 2000г.</option>
+                                                    <option value="">2000</option>
+                                                    <option value="">2001</option>
+                                                    <option value="">2002</option>
+                                                    <option value="">2003</option>
+                                                    <option value="">2004</option>
+                                                    <option value="">2005</option>
+                                                    <option value="">2006</option>
+                                                    <option value="">2007</option>
+                                                    <option value="">2008</option>
+                                                    <option value="">2009</option>
+                                                    <option value="">2010</option>
+                                                    <option value="">2011</option>
+                                                    <option value="">2012</option>
+                                                    <option value="">2013</option>
+                                                    <option value="">2014</option>
+                                                    <option value="">2015</option>
+                                                    <option value="">2016</option>
+                                                    <option value="">2017</option>
+                                                    <option value="">2018</option>
+                                                    <option value="">2019</option>
+                                                    <option value="">2020</option>
+                                                    <option value="">2022</option>
+                                                    <option value="">2023</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="select-wrapper">
+                                                <select name="select2" class="input-custom">
+                                                    <option value="">Марка</option>
+                                                    <option value="Alfa Romeo">Alfa Romeo</option>
+                                                    <option value="Aston Martin">Aston Martin</option>
+                                                    <option value="Audi">Audi</option>
+                                                    <option value="Autovaz">Autovaz</option>
+                                                    <option value="Bentley">Bentley</option>
+                                                    <option value="Bmw">Bmw</option>
+                                                    <option value="Cadillac">Cadillac</option>
+                                                    <option value="Chevrolet">Chevrolet</option>
+                                                    <option value="Chrysler">Chrysler</option>
+                                                    <option value="Citroen">Citroen</option>
+                                                    <option value="Daihatsu">Daihatsu</option>
+                                                    <option value="Dodge">Dodge</option>
+                                                    <option value="Ferrari">Ferrari</option>
+                                                    <option value="Fiat">Fiat</option>
+                                                    <option value="Ford">Ford</option>
+                                                    <option value="Honda">Honda</option>
+                                                    <option value="Hummer">Hummer</option>
+                                                    <option value="Hyundai">Hyundai</option>
+                                                    <option value="Isuzu">Isuzu</option>
+                                                    <option value="Jaguar">Jaguar</option>
+                                                    <option value="Jeep">Jeep</option>
+                                                    <option value="Kia">Kia</option>
+                                                    <option value="Lamborghini">Lamborghini</option>
+                                                    <option value="Lancia">Lancia</option>
+                                                    <option value="Land Rover">Land Rover</option>
+                                                    <option value="Lexus">Lexus</option>
+                                                    <option value="Lotus">Lotus</option>
+                                                    <option value="Maserati">Maserati</option>
+                                                    <option value="Mazda">Mazda</option>
+                                                    <option value="Mercedes Benz">Mercedes Benz</option>
+                                                    <option value="MG">MG</option>
+                                                    <option value="Mini">Mini</option>
+                                                    <option value="Mitsubishi">Mitsubishi</option>
+                                                    <option value="Morgan">Morgan</option>
+                                                    <option value="Nissan">Nissan</option>
+                                                    <option value="Opel">Opel</option>
+                                                    <option value="Peugeot">Peugeot</option>
+                                                    <option value="Porsche">Porsche</option>
+                                                    <option value="Renault">Renault</option>
+                                                    <option value="Rolls Royce">Rolls Royce</option>
+                                                    <option value="Rover">Rover</option>
+                                                    <option value="Saab">Saab</option>
+                                                    <option value="Seat">Seat</option>
+                                                    <option value="Skoda">Skoda</option>
+                                                    <option value="Smart">Smart</option>
+                                                    <option value="Ssangyong">Ssangyong</option>
+                                                    <option value="Subaru">Subaru</option>
+                                                    <option value="Suzuki">Suzuki</option>
+                                                    <option value="Tata">Tata</option>
+                                                    <option value="Toyota">Toyota</option>
+                                                    <option value="Volkswagen">Volkswagen</option>
+                                                    <option value="Volvo">Volvo</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <div><input type="text" name="model" class="form-control input-custom"
+                                                        value=""
+                                                        placeholder="Модел" required></div>
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="select-wrapper">
+                                                <select name="select4" class="input-custom">
+                                                    <option value="">Тип</option>
+                                                    <option value="">Седан</option>
+                                                    <option value="">Хечбек</option>
+                                                    <option value="">Купе</option>
+                                                    <option value="">Комби</option>
+                                                </select>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <div class="row">
+                                                <div class="col-xs-7">
+                                                    <div class="form-group">
+                                                        <div class="select-wrapper">
+                                                            <select name="select5" class="input-custom">
+                                                                <option value="">Филтри</option>
+                                                                <option value="">Без филтри</option>
+                                                                <option value="">С филтри</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <a class="btn btn-lg btn-full" data-toggle="modal"
+                                           data-target="#tab2Modal"><span>Цена за смяната</span></a>
+                                    </form>
+                                </div>
+                                <!-- Batteries section -->
+                                <div class="vertical-tab-content">
+                                    <h3>Изберете модел</h3>
+                                    <p class="comment">Всички полета са задължителни</p>
+                                    <form id="tab3-form">
+                                        <div class="form-group">
+                                            <div class="select-wrapper">
+                                                <select name="select1" class="input-custom">
+                                                    <option value="">Година</option>
+                                                    <option value="">Под 2000г.</option>
+                                                    <option value="">2000</option>
+                                                    <option value="">2001</option>
+                                                    <option value="">2002</option>
+                                                    <option value="">2003</option>
+                                                    <option value="">2004</option>
+                                                    <option value="">2005</option>
+                                                    <option value="">2006</option>
+                                                    <option value="">2007</option>
+                                                    <option value="">2008</option>
+                                                    <option value="">2009</option>
+                                                    <option value="">2010</option>
+                                                    <option value="">2011</option>
+                                                    <option value="">2012</option>
+                                                    <option value="">2013</option>
+                                                    <option value="">2014</option>
+                                                    <option value="">2015</option>
+                                                    <option value="">2016</option>
+                                                    <option value="">2017</option>
+                                                    <option value="">2018</option>
+                                                    <option value="">2019</option>
+                                                    <option value="">2020</option>
+                                                    <option value="">2022</option>
+                                                    <option value="">2023</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="select-wrapper">
+                                                <select name="select2" class="input-custom">
+                                                    <option value="">Марка</option>
+                                                    <option value="Alfa Romeo">Alfa Romeo</option>
+                                                    <option value="Aston Martin">Aston Martin</option>
+                                                    <option value="Audi">Audi</option>
+                                                    <option value="Autovaz">Autovaz</option>
+                                                    <option value="Bentley">Bentley</option>
+                                                    <option value="Bmw">Bmw</option>
+                                                    <option value="Cadillac">Cadillac</option>
+                                                    <option value="Chevrolet">Chevrolet</option>
+                                                    <option value="Chrysler">Chrysler</option>
+                                                    <option value="Citroen">Citroen</option>
+                                                    <option value="Daihatsu">Daihatsu</option>
+                                                    <option value="Dodge">Dodge</option>
+                                                    <option value="Ferrari">Ferrari</option>
+                                                    <option value="Fiat">Fiat</option>
+                                                    <option value="Ford">Ford</option>
+                                                    <option value="Honda">Honda</option>
+                                                    <option value="Hummer">Hummer</option>
+                                                    <option value="Hyundai">Hyundai</option>
+                                                    <option value="Isuzu">Isuzu</option>
+                                                    <option value="Jaguar">Jaguar</option>
+                                                    <option value="Jeep">Jeep</option>
+                                                    <option value="Kia">Kia</option>
+                                                    <option value="Lamborghini">Lamborghini</option>
+                                                    <option value="Lancia">Lancia</option>
+                                                    <option value="Land Rover">Land Rover</option>
+                                                    <option value="Lexus">Lexus</option>
+                                                    <option value="Lotus">Lotus</option>
+                                                    <option value="Maserati">Maserati</option>
+                                                    <option value="Mazda">Mazda</option>
+                                                    <option value="Mercedes Benz">Mercedes Benz</option>
+                                                    <option value="MG">MG</option>
+                                                    <option value="Mini">Mini</option>
+                                                    <option value="Mitsubishi">Mitsubishi</option>
+                                                    <option value="Morgan">Morgan</option>
+                                                    <option value="Nissan">Nissan</option>
+                                                    <option value="Opel">Opel</option>
+                                                    <option value="Peugeot">Peugeot</option>
+                                                    <option value="Porsche">Porsche</option>
+                                                    <option value="Renault">Renault</option>
+                                                    <option value="Rolls Royce">Rolls Royce</option>
+                                                    <option value="Rover">Rover</option>
+                                                    <option value="Saab">Saab</option>
+                                                    <option value="Seat">Seat</option>
+                                                    <option value="Skoda">Skoda</option>
+                                                    <option value="Smart">Smart</option>
+                                                    <option value="Ssangyong">Ssangyong</option>
+                                                    <option value="Subaru">Subaru</option>
+                                                    <option value="Suzuki">Suzuki</option>
+                                                    <option value="Tata">Tata</option>
+                                                    <option value="Toyota">Toyota</option>
+                                                    <option value="Volkswagen">Volkswagen</option>
+                                                    <option value="Volvo">Volvo</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <div><input type="text" name="model" class="form-control input-custom"
+                                                        value=""
+                                                        placeholder="Модел" required></div>
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="select-wrapper">
+                                                <select name="select4" class="input-custom">
+                                                    <option value="">Тип</option>
+                                                    <option value="">Седан</option>
+                                                    <option value="">Хечбек</option>
+                                                    <option value="">Купе</option>
+                                                    <option value="">Комби</option>
+                                                </select>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <div><input type="text" name="ampers" class="form-control input-custom"
+                                                        value=""
+                                                        placeholder="Ампери" required></div>
+                                        </div>
+
+                                        <a class="btn btn-lg btn-full" data-toggle="modal"
+                                           data-target="#tab3Modal"><span>Изчисли цена</span></a>
+                                    </form>
+                                </div>
+                                <!-- Brakes section -->
+                                <div class="vertical-tab-content">
+                                    <h3>Изберете модел</h3>
+                                    <p class="comment">Всички полета са задължителни</p>
+                                    <form id="tab4-form">
+                                        <div class="form-group">
+                                            <div class="select-wrapper">
+                                                <select name="select1" class="input-custom">
+                                                    <option value="">Година</option>
+                                                    <option value="">Под 2000г.</option>
+                                                    <option value="">2000</option>
+                                                    <option value="">2001</option>
+                                                    <option value="">2002</option>
+                                                    <option value="">2003</option>
+                                                    <option value="">2004</option>
+                                                    <option value="">2005</option>
+                                                    <option value="">2006</option>
+                                                    <option value="">2007</option>
+                                                    <option value="">2008</option>
+                                                    <option value="">2009</option>
+                                                    <option value="">2010</option>
+                                                    <option value="">2011</option>
+                                                    <option value="">2012</option>
+                                                    <option value="">2013</option>
+                                                    <option value="">2014</option>
+                                                    <option value="">2015</option>
+                                                    <option value="">2016</option>
+                                                    <option value="">2017</option>
+                                                    <option value="">2018</option>
+                                                    <option value="">2019</option>
+                                                    <option value="">2020</option>
+                                                    <option value="">2022</option>
+                                                    <option value="">2023</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="select-wrapper">
+                                                <select name="select2" class="input-custom">
+                                                    <option value="">Марка</option>
+                                                    <option value="Alfa Romeo">Alfa Romeo</option>
+                                                    <option value="Aston Martin">Aston Martin</option>
+                                                    <option value="Audi">Audi</option>
+                                                    <option value="Autovaz">Autovaz</option>
+                                                    <option value="Bentley">Bentley</option>
+                                                    <option value="Bmw">Bmw</option>
+                                                    <option value="Cadillac">Cadillac</option>
+                                                    <option value="Chevrolet">Chevrolet</option>
+                                                    <option value="Chrysler">Chrysler</option>
+                                                    <option value="Citroen">Citroen</option>
+                                                    <option value="Daihatsu">Daihatsu</option>
+                                                    <option value="Dodge">Dodge</option>
+                                                    <option value="Ferrari">Ferrari</option>
+                                                    <option value="Fiat">Fiat</option>
+                                                    <option value="Ford">Ford</option>
+                                                    <option value="Honda">Honda</option>
+                                                    <option value="Hummer">Hummer</option>
+                                                    <option value="Hyundai">Hyundai</option>
+                                                    <option value="Isuzu">Isuzu</option>
+                                                    <option value="Jaguar">Jaguar</option>
+                                                    <option value="Jeep">Jeep</option>
+                                                    <option value="Kia">Kia</option>
+                                                    <option value="Lamborghini">Lamborghini</option>
+                                                    <option value="Lancia">Lancia</option>
+                                                    <option value="Land Rover">Land Rover</option>
+                                                    <option value="Lexus">Lexus</option>
+                                                    <option value="Lotus">Lotus</option>
+                                                    <option value="Maserati">Maserati</option>
+                                                    <option value="Mazda">Mazda</option>
+                                                    <option value="Mercedes Benz">Mercedes Benz</option>
+                                                    <option value="MG">MG</option>
+                                                    <option value="Mini">Mini</option>
+                                                    <option value="Mitsubishi">Mitsubishi</option>
+                                                    <option value="Morgan">Morgan</option>
+                                                    <option value="Nissan">Nissan</option>
+                                                    <option value="Opel">Opel</option>
+                                                    <option value="Peugeot">Peugeot</option>
+                                                    <option value="Porsche">Porsche</option>
+                                                    <option value="Renault">Renault</option>
+                                                    <option value="Rolls Royce">Rolls Royce</option>
+                                                    <option value="Rover">Rover</option>
+                                                    <option value="Saab">Saab</option>
+                                                    <option value="Seat">Seat</option>
+                                                    <option value="Skoda">Skoda</option>
+                                                    <option value="Smart">Smart</option>
+                                                    <option value="Ssangyong">Ssangyong</option>
+                                                    <option value="Subaru">Subaru</option>
+                                                    <option value="Suzuki">Suzuki</option>
+                                                    <option value="Tata">Tata</option>
+                                                    <option value="Toyota">Toyota</option>
+                                                    <option value="Volkswagen">Volkswagen</option>
+                                                    <option value="Volvo">Volvo</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <div><input type="text" name="model" class="form-control input-custom"
+                                                        value=""
+                                                        placeholder="Модел" required></div>
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="select-wrapper">
+                                                <select name="select4" class="input-custom">
+                                                    <option value="">Тип</option>
+                                                    <option value="">Седан</option>
+                                                    <option value="">Хечбек</option>
+                                                    <option value="">Купе</option>
+                                                    <option value="">Комби</option>
+                                                </select>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <div class="row">
+                                                <div class="col-xs-7">
+                                                    <div class="form-group">
+                                                        <div class="select-wrapper">
+                                                            <select name="select5" class="input-custom">
+                                                                <option value="">Позиция</option>
+                                                                <option value="">Предни</option>
+                                                                <option value="">Задни</option>
+                                                                <option value="">Предни и Задни</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <a class="btn btn-lg btn-full" data-toggle="modal"
+                                           data-target="#tab4Modal"><span>Изчисли цена</span></a>
+                                    </form>
+                                </div>
+                                <!-- Alignment section -->
+                                <div class="vertical-tab-content">
+                                    <h3>Изберете модел</h3>
+                                    <p class="comment">Всички полета са задължителни</p>
+                                    <form id="tab5-form">
+                                        <div class="form-group">
+                                            <div class="select-wrapper">
+                                                <select name="select1" class="input-custom">
+                                                    <option value="">Година</option>
+                                                    <option value="">Под 2000г.</option>
+                                                    <option value="">2000</option>
+                                                    <option value="">2001</option>
+                                                    <option value="">2002</option>
+                                                    <option value="">2003</option>
+                                                    <option value="">2004</option>
+                                                    <option value="">2005</option>
+                                                    <option value="">2006</option>
+                                                    <option value="">2007</option>
+                                                    <option value="">2008</option>
+                                                    <option value="">2009</option>
+                                                    <option value="">2010</option>
+                                                    <option value="">2011</option>
+                                                    <option value="">2012</option>
+                                                    <option value="">2013</option>
+                                                    <option value="">2014</option>
+                                                    <option value="">2015</option>
+                                                    <option value="">2016</option>
+                                                    <option value="">2017</option>
+                                                    <option value="">2018</option>
+                                                    <option value="">2019</option>
+                                                    <option value="">2020</option>
+                                                    <option value="">2022</option>
+                                                    <option value="">2023</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="select-wrapper">
+                                                <select name="select2" class="input-custom">
+                                                    <option value="">Марка</option>
+                                                    <option value="Alfa Romeo">Alfa Romeo</option>
+                                                    <option value="Aston Martin">Aston Martin</option>
+                                                    <option value="Audi">Audi</option>
+                                                    <option value="Autovaz">Autovaz</option>
+                                                    <option value="Bentley">Bentley</option>
+                                                    <option value="Bmw">Bmw</option>
+                                                    <option value="Cadillac">Cadillac</option>
+                                                    <option value="Chevrolet">Chevrolet</option>
+                                                    <option value="Chrysler">Chrysler</option>
+                                                    <option value="Citroen">Citroen</option>
+                                                    <option value="Daihatsu">Daihatsu</option>
+                                                    <option value="Dodge">Dodge</option>
+                                                    <option value="Ferrari">Ferrari</option>
+                                                    <option value="Fiat">Fiat</option>
+                                                    <option value="Ford">Ford</option>
+                                                    <option value="Honda">Honda</option>
+                                                    <option value="Hummer">Hummer</option>
+                                                    <option value="Hyundai">Hyundai</option>
+                                                    <option value="Isuzu">Isuzu</option>
+                                                    <option value="Jaguar">Jaguar</option>
+                                                    <option value="Jeep">Jeep</option>
+                                                    <option value="Kia">Kia</option>
+                                                    <option value="Lamborghini">Lamborghini</option>
+                                                    <option value="Lancia">Lancia</option>
+                                                    <option value="Land Rover">Land Rover</option>
+                                                    <option value="Lexus">Lexus</option>
+                                                    <option value="Lotus">Lotus</option>
+                                                    <option value="Maserati">Maserati</option>
+                                                    <option value="Mazda">Mazda</option>
+                                                    <option value="Mercedes Benz">Mercedes Benz</option>
+                                                    <option value="MG">MG</option>
+                                                    <option value="Mini">Mini</option>
+                                                    <option value="Mitsubishi">Mitsubishi</option>
+                                                    <option value="Morgan">Morgan</option>
+                                                    <option value="Nissan">Nissan</option>
+                                                    <option value="Opel">Opel</option>
+                                                    <option value="Peugeot">Peugeot</option>
+                                                    <option value="Porsche">Porsche</option>
+                                                    <option value="Renault">Renault</option>
+                                                    <option value="Rolls Royce">Rolls Royce</option>
+                                                    <option value="Rover">Rover</option>
+                                                    <option value="Saab">Saab</option>
+                                                    <option value="Seat">Seat</option>
+                                                    <option value="Skoda">Skoda</option>
+                                                    <option value="Smart">Smart</option>
+                                                    <option value="Ssangyong">Ssangyong</option>
+                                                    <option value="Subaru">Subaru</option>
+                                                    <option value="Suzuki">Suzuki</option>
+                                                    <option value="Tata">Tata</option>
+                                                    <option value="Toyota">Toyota</option>
+                                                    <option value="Volkswagen">Volkswagen</option>
+                                                    <option value="Volvo">Volvo</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <div><input type="text" name="model" class="form-control input-custom"
+                                                        value=""
+                                                        placeholder="Модел" required></div>
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="select-wrapper">
+                                                <select name="select4" class="input-custom">
+                                                    <option value="">Тип</option>
+                                                    <option value="">Седан</option>
+                                                    <option value="">Хечбек</option>
+                                                    <option value="">Купе</option>
+                                                    <option value="">Комби</option>
+                                                </select>
+                                            </div>
+                                        </div>
+
+                                        <a class="btn btn-lg btn-full" data-toggle="modal"
+                                           data-target="#tab5Modal"><span>Изчисли цена</span></a>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="divider-lg visible-sm visible-xs"></div>
+                    <div class="col-md-6 col-lg-7">
+                        <h2 class="text-center-md">Относно нашаите услуги</h2>
+                        <p class="text-center-md">Ние сме технически сервиз Ауто Фикс - Пловдив, разполагаме с
+                            диагностично
+                            оборудване и квалифицирани експерти по нови технологии за поддръжка на вашия автомобил. Ние
+                            непрекъснато работим, за да предложим качествени услуги, които отговарят на спазването на
+                            установените срокове, в допълнение към това винаги с справедливи цени и вниманието, което
+                            заслужавате.</p>
+                        <ul class="marker-list-sm column-sm-2">
+                            <li>Гаранция за извършената работа</li>
+                            <li>Сертифицирани техници</li>
+                            <li>Качествени резервни части</li>
+                            <li>Персонализирана помощ</li>
+                            <li>Бързина на обслужването</li>
+                            <li>Съдействие вашите резервни части</li>
+                        </ul>
+                        <div class="coupon">
+                            <div class="coupon-row">
+                                <div class="coupon-col-left text-center">
+                                    <div class="coupon-text1">Гореща оферта</div>
+                                    <div class="coupon-text2"><span></span>25%<span>off</span></div>
+                                    <div class="coupon-text3">Сега</div>
+                                </div>
+                                <div class="coupon-col-right text-center">
+                                    <div class="coupon-text4">Офертата е валидна</div>
+                                    <div class="coupon-text5">За ремонти за суми над 3000.00лв.</div>
+                                    <a href="{% url 'service_request' %}" class="coupon-all">Възсползайте
+                                        се<span></span></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- //Block -->
+        <!-- Services Block -->
+        <div class="block">
+            <div class="container">
+                <h2 class="h-lg text-center">Защо да изберете нас?</h2>
+                <p class="info text-center">Ние сме група от сертифицирани техници, които знаят какво правят и
+                    използваме
+                    резервни части с най-добро качество, точно това, от което се нуждаете. </p>
+                <div class="row">
+                    <div class="col-sm-4 col-md-4">
+                        <div class="text-icon">
+                            <div class="icon-wrapper"><span><i class="icon icon-technology"></i><span
+                                    class="icon-hover"></span></span>
+                            </div>
+                            <h3 class="title">ЦЕНИ</h3>
+                            <p class="text">Предлагаме достъпни цени; не забравяйте, че евтиното излиза скъпо, но
+                                инвестирането в колата ви в дългосрочен план е спестяване.</p>
+                        </div>
+                    </div>
+                    <div class="col-sm-4 col-md-4">
+                        <div class="text-icon">
+                            <div class="icon-wrapper"><span><i class="icon icon-tool"></i><span
+                                    class="icon-hover"></span></span>
+                            </div>
+                            <h3 class="title">ДОВЕРИЕ</h3>
+                            <p class="text">Вашият автомобил ще бъде в добри ръце, <br>при нас в края на всяка работа ще
+                                бъдете доволни от постигнатия резултат.</p>
+                        </div>
+                    </div>
+                    <div class="col-sm-4 col-md-4">
+                        <div class="text-icon">
+                            <div class="icon-wrapper"><span><i class="icon icon-diploma"></i><span
+                                    class="icon-hover"></span></span>
+                            </div>
+                            <h3 class="title">ГАРАНЦИЯ</h3>
+                            <p class="text">Уверени в знанията си и професионализма, ние предлагаме
+                                <br>Пълна гаранция за извършената работа.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- //Services Block -->
+        <!-- Testimonials Block -->
+        <div class="block bg-3">
+            <div class="container-fluid">
+                <h2 class="h-lg text-center">Какво казват <span class="color">Нашите</span> Клиенти</h2>
+                <div class="testimonials-carousel">
+                    <div class="testimonials">
+                        <div class="testimonials-item">
+                            <div class="inside">
+                                <div class="meta"><span class="rating"><i class="icon-star"></i><i
+                                        class="icon-star"></i><i
+                                        class="icon-star"></i><i class="icon-star"></i><i
+                                        class="icon-star"></i></span><span
+                                        class="username">Георги Георгиев</span></div>
+                                <div class="text">Перфектно обслужване, съвестен персонал препоръчвам услугите им горещо
+                                    супер сте.
+                                </div>
+                            </div>
+                            <div class="bg-image"
+                                 style="background-image: url(../static/images/testimonial-bg-1.jpg);"></div>
+                        </div>
+                        <div class="testimonials-item testimonials-item--dark">
+                            <div class="inside">
+                                <div class="meta"><span class="rating"><i class="icon-star"></i><i
+                                        class="icon-star"></i><i
+                                        class="icon-star"></i><i class="icon-star"></i><i
+                                        class="icon-star"></i></span><span
+                                        class="username">Станчо Г.</span></div>
+                                <div class="text">Обслужиха колата ми, много съм доволен. Догодина пак при вас ще дойда.
+                                </div>
+                            </div>
+                            <div class="bg-image"
+                                 style="background-image: url(../static/images/testimonial-bg-2.jpg);"></div>
+                        </div>
+                    </div>
+                    <div class="testimonials">
+                        <div class="testimonials-item testimonials-item--dark">
+                            <div class="inside">
+                                <div class="meta"><span class="rating"><i class="icon-star"></i><i
+                                        class="icon-star"></i><i
+                                        class="icon-star"></i><i class="icon-star"></i><i
+                                        class="icon-star"></i></span><span
+                                        class="username">Катя М.</span></div>
+                                <div class="text">Привас намерих отношението което досега не съм получавала от
+                                    сервизите,
+                                    благодаря Ви.
+                                </div>
+                            </div>
+                            <div class="bg-image"
+                                 style="background-image: url(../static/images/testimonial-bg-2.jpg);"></div>
+                        </div>
+                        <div class="testimonials-item">
+                            <div class="inside">
+                                <div class="meta"><span class="rating"><i class="icon-star"></i><i
+                                        class="icon-star"></i><i
+                                        class="icon-star"></i><i class="icon-star"></i><i
+                                        class="icon-star"></i></span><span
+                                        class="username">Денис Стойлов</span></div>
+                                <div class="text">Перфектни услуги добро качество на частите доволен съм.</div>
+                            </div>
+                            <div class="bg-image"
+                                 style="background-image: url(../static/images/testimonial-bg-1.jpg);"></div>
+                        </div>
+                    </div>
+                    <div class="testimonials">
+                        <div class="testimonials-item">
+                            <div class="inside">
+                                <div class="meta"><span class="rating"><i class="icon-star"></i><i
+                                        class="icon-star"></i><i
+                                        class="icon-star"></i><i class="icon-star"></i><i
+                                        class="icon-star"></i></span><span
+                                        class="username">Милена Димова</span></div>
+                                <div class="text">Не мога да си кривя душата много са добри!</div>
+                            </div>
+                            <div class="bg-image"
+                                 style="background-image: url(../static/images/testimonial-bg-1.jpg);"></div>
+                        </div>
+                        <div class="testimonials-item testimonials-item--dark">
+                            <div class="inside">
+                                <div class="meta"><span class="rating"><i class="icon-star"></i><i
+                                        class="icon-star"></i><i
+                                        class="icon-star"></i><i class="icon-star"></i><i
+                                        class="icon-star"></i></span><span
+                                        class="username">Дияна Игнатова</span></div>
+                                <div class="text">Очарована от отношението на специалистите, препоръчах ви на приятели и
+                                    познати.
+                                </div>
+                            </div>
+                            <div class="bg-image"
+                                 style="background-image: url(../static/images/testimonial-bg-2.jpg);"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- //Testimonials Block -->
+        <!-- Statistics Block -->
+        <div class="block">
+            <div class="container">
+                <h2 class="h-lg text-center">Нашата <span class="color">Статистика през годините</span></h2>
+                <p class="info text-center">Статистика на извършените услуги</p>
+                <div class="row" id="counterBlock">
+                    <div class="col-sm-3 col-md-3">
+                        <div class="stat-box">
+                            <div><span class="number"><span class="count" data-to="15"
+                                                            data-speed="1000">15</span></span><span class="icon"><i
+                                    class="icon-rocket"></i></span></div>
+                            <div class="text">
+                                <h5>Години опит в областта</h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-3 col-md-3">
+                        <div class="stat-box">
+                            <div><span class="number"><span class="count" data-to="12"
+                                                            data-speed="1000">12</span></span><span class="icon"><i
+                                    class="icon-people-1"></i></span></div>
+                            <div class="text">
+                                <h5>Професионалисти</h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-3 col-md-3">
+                        <div class="stat-box">
+                            <div><span class="number"><span class="count" data-to="3135"
+                                                            data-speed="1000">3135</span></span><span class="icon"><i
+                                    class="icon-people"></i></span></div>
+                            <div class="text">
+                                <h5>Доволни клиента</h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-3 col-md-3">
+                        <div class="stat-box">
+                            <div><span class="number"><span class="count" data-to="2457"
+                                                            data-speed="1000">2457</span></span><span class="icon"><i
+                                    class="icon-transport"></i></span></div>
+                            <div class="text">
+                                <h5>Ремонтирани автомобила</h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- //Statistics Block -->
+
+        <!-- Appointment Block -->
+        <div class="block">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="text-appointment">
+                            <h2 class="h-lg">Уговорете <span class="color">Вашия час</span> Сега</h2>
+                            <p class="info">Поддръжка и специализиран ремонт на вашия автомобил</p>
+                            <h2 class="h-phone">Телефон: +359 882 366 633</h2>
+                            <div class="btn-inline">
+                                <a class="btn btn-invert"
+                                   href="{% url 'service_request' %}"><span>Запазете час</span></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="img-move animation" data-animation="fadeInRight" data-animation-delay="0s">
+                            <img src="../static/images/img-car-move.png" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- //Appointment Block -->
+    </div>
+    <!-- // Content  -->
+
+{% endblock %}

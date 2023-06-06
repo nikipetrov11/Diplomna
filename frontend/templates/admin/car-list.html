@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="html 5 template">
+    <meta name="author" content="tonytemplates.com">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="icon" href="{% static 'favicon.ico' %}">
+
+    <title>Admin panel</title>
+    <!-- Bootstrap core CSS -->
+    <link href="{% static '/css/main.css' %}" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Muli:100,100i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+          rel="stylesheet">
+    <!-- Google map -->
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js"></script>
+</head>
+
+<body>
+<!-- Loader -->
+<div id="loader-wrapper">
+    <div class="loader">
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="subline"></div>
+        <div class="subline"></div>
+        <div class="subline"></div>
+        <div class="subline"></div>
+        <div class="subline"></div>
+        <div class="loader-circle-1">
+            <div class="loader-circle-2"></div>
+        </div>
+        <div class="needle"></div>
+        <div class="loading">Зареждане</div>
+    </div>
+</div>
+<!-- //Loader -->
+<!-- Header -->
+<header class="page-header header-sticky">
+    {% include 'navigation.html' %}
+</header>
+<!-- // Header -->
+<!-- Content  -->
+<div id="pageTitle">
+    <div class="container">
+        <!-- Breadcrumbs Block -->
+        <div class="breadcrumbs">
+            <ul class="breadcrumb">
+                <li><a href="{% url 'index' %}">Начало</a></li>
+                <li><a href="{% url 'admin_panel' %}">Админ панел</a></li>
+                <li>Всички автомобили</li>
+            </ul>
+        </div>
+        <!-- //Breadcrumbs Block -->
+    </div>
+</div>
+<div id="pageContent">
+    <div class="block admin-panel">
+        <div class="container">
+            <div class="col-lg-3 col-md-4">
+                <div class="dashboard_menu">
+                    {% include 'admin/admin-navigation.html' %}
+                </div>
+            </div>
+            <div class="col-lg-9 col-md-8 mt-5 mt-lg-0 mt-md-0">
+                <div class="tab-content dashboard_content">
+                    <div id="car-list" role="tabpanel" aria-labelledby="car-list-tab">
+                        <div class="card border-0">
+                            <h5 class="font-w-6">Всички автомобили в системата:</h5>
+                            <div class="row">
+                                <div class="col-sm-12 col-md-6">
+                                    <div id="search-cars"><label>Намери кола по регистрационен номер:<input
+                                            type="search"
+                                            class="form-control form-control-sm input-custom"></label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-body" id="printTable">
+                                <div class="table-responsive" style="overflow-x: initial;">
+                                    <table class="table">
+                                        <thead>
+                                        <tr>
+                                            <th class="bold-font">Собственик</th>
+                                            <th class="bold-font">Модел</th>
+                                            <th class="bold-font">Производител</th>
+                                            <th class="bold-font">Произведена през</th>
+                                            <th class="bold-font">Рег. номер</th>
+                                            <th class="bold-font">В сервиза</th>
+                                            <th class="bold-font">Виж повече</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        {% for car in car_list %}
+                                            <tr>
+                                                {% if car.has_user %}
+                                                    <td>{{ car.user.username }}</td>
+                                                {% else %}
+                                                    <td>-</td>
+                                                {% endif %}
+                                                <td>{{ car.model }}</td>
+                                                <td>{{ car.maker }}</td>
+                                                <td>{{ car.year_of_make }}</td>
+                                                <td>{{ car.registration_number }}</td>
+                                                {% if car.in_service %}
+                                                    <td>ДА</td>
+                                                {% else %}
+                                                    <td>НЕ</td>
+                                                {% endif %}
+                                                <td>
+                                                    <div class="form-popup-wrap"><a
+                                                            class="btn form-popup-link view-details-admin"
+                                                            href="#"><span>Покажи още</span></a>
+                                                        <div class="form-popup">
+                                                            <div class="form-popup-close"><i
+                                                                    class="icon-close-cross"></i>
+                                                            </div>
+                                                            <form id="quote-form" method="post">
+                                                                <div class="quote-form-inside">
+
+                                                                    <div id="{{ car.pk }}" class="form-inline">
+
+                                                                        <h5 class="font-w-6">Информация за колата:</h5>
+                                                                        <p><span
+                                                                                class="bold-font">Модел: </span>{{ car.model }}
+                                                                        </p>
+                                                                        <br>
+                                                                        <p><span
+                                                                                class="bold-font">Производител: </span>{{ car.maker }}
+                                                                        </p><br>
+                                                                        <p><span
+                                                                                class="bold-font">Произведена през:: </span>{{ car.year_of_make }}
+                                                                        </p><br>
+                                                                        <p><span
+                                                                                class="bold-font">Рег. номер: </span>{{ car.registration_number }}
+                                                                        </p><br>
+                                                                        <p><span
+                                                                                class="bold-font">Добавена на: </span>{{ car.created_at }}
+                                                                        </p><br>
+
+                                                                        <div style="width: 100%;">
+                                                                            <h5 class="font-w-6">Предишни
+                                                                                посещения:</h5>
+                                                                            <table class="table">
+                                                                                <thead>
+                                                                                <tr>
+                                                                                    <th class="bold-font">Дата</th>
+                                                                                    <th class="bold-font">Причина за
+                                                                                        посещение:
+                                                                                    </th>
+                                                                                    <th class="bold-font">КМ на колата
+                                                                                    </th>
+                                                                                    <th class="bold-font">Следващва
+                                                                                        дата
+                                                                                    </th>
+                                                                                    <th class="bold-font">Периодично
+                                                                                        посещение
+                                                                                    </th>
+                                                                                </tr>
+                                                                                </thead>
+                                                                                <tbody>
+                                                                                {% for event in car.get_events %}
+                                                                                    <tr>
+                                                                                        <td>{{ event.created_at }}
+                                                                                        </td>
+                                                                                        <td>{{ event.event_text }}</td>
+                                                                                        <td>{{ event.km_of_car }}</td>
+                                                                                        {% if event.next_date %}
+                                                                                            <td>{{ event.next_date }}</td>
+                                                                                        {% else %}
+                                                                                            <td>Не</td>
+                                                                                        {% endif %}
+                                                                                        {% if event.periodic_event %}
+                                                                                            <td>Да</td>
+                                                                                        {% else %}
+                                                                                            <td>Не</td>
+                                                                                        {% endif %}
+                                                                                    </tr>
+                                                                                {% endfor %}
+                                                                                </tbody>
+                                                                            </table>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="btn-inline">
+                                                                        <a class="btn btn-invert"
+                                                                           href="{% url 'admin_car_update' pk=car.pk %}"
+                                                                           data-toggle="modal"><span>Редактирай кола</span></a>
+                                                                        <a class="btn btn-invert"
+                                                                           href="{% url 'admin_add_event' pk=car.pk %}"
+                                                                        ><span>Добави посещение</span></a>
+                                                                        <a class="btn"
+                                                                           href="{% url 'admin_car_delete' pk=car.pk %}"><span>Изтриване</span></a>
+                                                                        <a class="btn" type="button"
+                                                                           href="{% url 'admin_car_list' %}"
+                                                                           onclick="saveDiv('{{ car.pk }}')"><span>Свали</span>
+                                                                        </a>
+                                                                    </div>
+                                                                </div>
+                                                            </form>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        {% endfor %}
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+<!-- // Content  -->
+<!-- Footer -->
+<div class="page-footer">
+    <div class="footer-content">
+        <div class="footer-col-left">
+            <div class="inside">
+                <div class="footer-phone">
+                    <h2 class="h-phone">Позвънете: <span class="number">+359 882 366 633</span></h2>
+                </div>
+                <div class="contact-info"><i class="icon icon-locate"></i>Пловдив 4000, Кукленско шосе 24</div>
+                <div class="contact-info"><i class="icon icon-clock"></i>Понеделник-Събота <span class="color">7:00AM - 6:00PM</span><br>
+                    Неделя Затворено
+                </div>
+                <div class="contact-info"><i class="icon icon-email"></i><a href="mailto:info@autofix.bg">info-plovdiv@autofix.bg</a>
+                </div>
+                <div class="social-links">
+                    <ul>
+                        <li>
+                            <a class="icon icon-facebook-logo" href="#"></a>
+                        </li>
+                        <li>
+                            <a class="icon icon-twitter-logo" href="#"></a>
+                        </li>
+                        <li>
+                            <a class="icon icon-instagram-logo" href="#"></a>
+                        </li>
+                        <li>
+                            <a class="icon icon-google-plus-logo" href="#"></a>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+        <div class="footer-col-right">
+            <div id="footer-map" class="footer-map"></div>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <div class="container">
+            <div class="copyright">© 2023 Auto Fix, <span class="clearfix visible-xs"></span>All Rights Reserved</div>
+        </div>
+    </div>
+</div>
+<div class="back-to-top"><a href="#top"><span class="icon icon-transport"></span></a></div>
+<!-- //Footer -->
+<div class="darkout-menu"></div>
+<!-- Appointment Form -->
+<div class="modal fade" id="appointmentForm">
+    <div class="modal-dialog container">
+        <div class="modal-content">
+            <div class="modal-header"><a href="#" class="appointment" data-toggle="modal"
+                                         data-target="#appointmentForm"><i class="icon-shape icon"></i><span>Запазете час</span></a>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><i
+                        class="icon-close-cross"></i></button>
+            </div>
+            <div class="modal-body">
+                <div class="container-fluid">
+                    <h2>Запазете <span class="color">час при нас</span></h2>
+                    <p>За да запишете час при нас, обадете ни се на телефон +359 882 366 633 или попълнете формуляра
+                        по-долу, в най-кратки срокове ще отговорим на вашата заявка и един от нашите служители ще ви
+                        информира за потвърждението на часа. </p>
+                    <div class="divider"></div>
+                    <form id="appointment-form" class="contact-form form-horizontal" name="contactform" method="post">
+                        <div id="successAppointment" class="successform">
+                            <p>Вашето съобщение е изпратено!</p>
+                        </div>
+                        <div id="errorAppointment" class="errorform">
+                            <p>Съжаляваме, възникна проблем и вашето съобщение не можа да бъде изпратено, моля, опитайте
+                                отново.</p>
+                        </div>
+                        <h5>Информация за контакт</h5>
+                        <div class="form-inline">
+                            <div>
+                                <input type="text" name="name" class="form-control input-custom" value=""
+                                       placeholder="Име" required>
+                            </div>
+                            <div>
+                                <input type="text" name="lastname" class="form-control input-custom" value=""
+                                       placeholder="Фамилия" required>
+                            </div>
+                        </div>
+                        <div class="form-inline">
+                            <div>
+                                <input type="text" name="phone" class="form-control input-custom" value=""
+                                       placeholder="Телефон" required>
+                            </div>
+                            <div>
+                                <input type="text" name="email" class="form-control input-custom" value=""
+                                       placeholder="Email" required>
+                            </div>
+                        </div>
+                        <div class="divider"></div>
+                        <h5>Детайли за ремонта</h5>
+                        <div class="form-inline">
+                            <div class="datetimepicker-wrap">
+                                <input type="text" name="date" class="form-control input-custom datetimepicker"
+                                       placeholder="Дата">
+                            </div>
+                            <div class="timepicker-wrap">
+                                <input type="text" name="time" class="form-control input-custom timepicker"
+                                       placeholder="Час">
+                            </div>
+
+                        </div>
+                        <div class="form-inline">
+                            <div>
+                                <input name="marka" type="text" class="form-control input-custom" value=""
+                                       placeholder="Марка" required>
+                            </div>
+                            <div class="form-inline">
+                                <div>
+                                    <input name="Model" type="text" class="form-control input-custom" value=""
+                                           placeholder="Модел" required>
+                                </div>
+                                <div class="select-wrapper">
+                                    <select name="select1" class="input-custom">
+                                        <option value="2000">2000</option>
+                                        <option value="2001">2001</option>
+                                        <option value="2002">2002</option>
+                                        <option value="2003">2003</option>
+                                        <option value="2004">2004</option>
+                                        <option value="2005">2005</option>
+                                        <option value="2006">2006</option>
+                                        <option value="2007">2007</option>
+                                        <option value="2008">2008</option>
+                                        <option value="2009">2009</option>
+                                        <option value="2010">2010</option>
+                                        <option value="2011">2011</option>
+                                        <option value="2012">2012</option>
+                                        <option value="2013">2013</option>
+                                        <option value="2014">2014</option>
+                                        <option value="2015">2015</option>
+                                        <option value="2016">2016</option>
+                                        <option value="2017">2017</option>
+                                        <option value="2018">2018</option>
+                                        <option value="2019">2019</option>
+                                        <option value="2020">2020</option>
+                                        <option value="2021">2021</option>
+                                        <option value="2022">2022</option>
+                                        <option value="2023">2023</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-inline">
+                            <div>
+                                <input name="cilindri" type="text" class="form-control input-custom" value=""
+                                       placeholder="Брой цилиндри" required>
+                            </div>
+                            <div class="form-inline">
+                                <div>
+                                    <input name="kilometraj" type="text" class="form-control input-custom" value=""
+                                           placeholder="Километраж" required>
+                                </div>
+                                <div>
+                                    <input name="vin" type="text" class="form-control input-custom" value=""
+                                           placeholder="VIN номер">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-inline">
+                            <textarea name="message" class="form-control textarea-custom"
+                                      placeholder="Необходимо обслужване или ремонт..."></textarea>
+                        </div>
+                        <div class="divider"></div>
+                        <div class="row">
+                            <div class="col-sm-4 col-md-3 bootstrap-datetimepicker-widget">
+                                <button type="submit" id="submit" class="btn btn-lg"><span>ИЗПРАТИ</span></button>
+                            </div>
+                            <div class="divider visible-xs"></div>
+                            <div class="col-sm-8 col-md-9">
+                                <p><i>ЗАБЕЛЕЖКА: Заявеният час и дата може да не са налични, по същия начин ще се
+                                    свържем с вас, за да намерим най-доброто време за поддръжка на вашия автомобил.</i>
+                                </p>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- //Appointment Form -->
+
+<!-- External JavaScripts -->
+<script src="{% static '/js/jquery.js' %}"></script>
+<script src="{% static '/js/plugins/bootstrap.min.js' %}"></script>
+<script src="{% static '/js/plugins/slick.min.js' %}"></script>
+<script src="{% static '/js/plugins/jquery.form.js' %}"></script>
+<script src="{% static '/js/plugins/jquery.validate.min.js' %}"></script>
+<script src="{% static '/js/plugins/moment.js' %}"></script>
+<script src="{% static '/js/plugins/bootstrap-datetimepicker.min.js' %}"></script>
+<script src="{% static '/js/plugins/jquery.waypoints.min.js' %}"></script>
+<script src="{% static '/js/plugins/jquery.countTo.js' %}"></script>
+<!-- Custom JavaScripts -->
+<script src="{% static '/js/custom.js' %}"></script>
+<script src="{% static '/js/forms.js' %}"></script>
+
+<!-- PDF download js -->
+<script src="{% static '/js/pdfcustom.min.js' %}"></script>
+<script src="{% static '/js/pdfcustom.js' %}"></script>
+</body>
+
+
+</html>

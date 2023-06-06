@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="html 5 template">
+    <meta name="author" content="tonytemplates.com">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="icon" href="{% static 'favicon.ico' %}">
+    <title>403</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="{% static '/css/main.css' %}" rel="stylesheet">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Muli:100,100i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+          rel="stylesheet">
+    <!-- Google map -->
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js"></script>
+</head>
+
+<body>
+<!-- Loader -->
+<div id="loader-wrapper">
+    <div class="loader">
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="subline"></div>
+        <div class="subline"></div>
+        <div class="subline"></div>
+        <div class="subline"></div>
+        <div class="subline"></div>
+        <div class="loader-circle-1">
+            <div class="loader-circle-2"></div>
+        </div>
+        <div class="needle"></div>
+        <div class="loading">Зареждане</div>
+    </div>
+</div>
+<!-- //Loader -->
+
+<!-- Content  -->
+<div id="pageContent">
+    <!-- Services -->
+    <div class="block">
+        <div class="container">
+            <h2 class="h-lg text-center" style="font-size: 120px; padding: 50px 0 50px 0;">403</h2>
+            <p class="text-center">ТАЗИ СТРАНИЦА Е ЗАБРАНЕНА. <br> ВЪРНЕТЕ СЕ ОБРАТНО!</p>
+            <div class="text-center"><a class="btn btn-invert" href="{% url 'index' %}"><span>Начало</span></a></div>
+        </div>
+    </div>
+    <!-- //Services -->
+</div>
+<!-- // Content  -->
+
+<div class="darkout-menu"></div>
+
+<!-- External JavaScripts -->
+<script src="{% static '/js/jquery.js' %}"></script>
+<script src="{% static '/js/plugins/bootstrap.min.js' %}"></script>
+<script src="{% static '/js/plugins/slick.min.js' %}"></script>
+<script src="{% static '/js/plugins/jquery.form.js' %}"></script>
+<script src="{% static '/js/plugins/jquery.validate.min.js' %}"></script>
+<script src="{% static '/js/plugins/moment.js' %}"></script>
+<script src="{% static '/js/plugins/bootstrap-datetimepicker.min.js' %}"></script>
+<script src="{% static '/js/plugins/jquery.waypoints.min.js' %}"></script>
+<script src="{% static '/js/plugins/jquery.countTo.js' %}"></script>
+<!-- Custom JavaScripts -->
+<script src="{% static '/js/custom.js' %}"></script>
+<script src="{% static '/js/forms.js' %}"></script>
+</body>
+
+
+</html>

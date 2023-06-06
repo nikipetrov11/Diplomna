@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="html 5 template">
+    <meta name="author" content="tonytemplates.com">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="icon" href="{% static 'favicon.ico' %}">
+    <title>Моите автомобили</title>
+    <!-- Bootstrap core CSS -->
+    <link href="{% static '/css/main.css' %}" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Muli:100,100i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+          rel="stylesheet">
+    <!-- Google map -->
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js"></script>
+</head>
+
+<body>
+
+<!-- Header -->
+<header class="page-header header-sticky">
+    {% include 'navigation.html' %}
+</header>
+<!-- // Header -->
+<!-- Content  -->
+<div id="pageTitle">
+    <div class="container">
+        <!-- Breadcrumbs Block -->
+        <div class="breadcrumbs">
+            <ul class="breadcrumb">
+                <li><a href="{% url 'index' %}">Начало</a></li>
+                <li>Моите автомобили</li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div id="pageContent">
+    <div class="block">
+        <div class="container">
+            {% if has_cars %}
+                <div class="tab-pane" id="car-list" role="tabpanel" aria-labelledby="car-list-tab">
+                    <div class="card border-0">
+                        <div class="card-header">
+                            <h5 class="font-w-6">Всички автомобили на потребител: {{ user.username }}</h5>
+                        </div>
+                        <div class="card-body table-responsive" style="overflow-x: initial;">
+                            <table id="example1" class="table table-bordered table-striped">
+                                <thead>
+                                <tr>
+                                    <th>Модел</th>
+                                    <th>Производител</th>
+                                    <th>Година на изработка</th>
+                                    <th>Регистрационен номер</th>
+                                    <th>Сервизни посещения</th>
+                                    <th>В сервиза</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                {% for car in car_list %}
+                                    <tr>
+                                        <td>{{ car.model }}</td>
+                                        <td>{{ car.maker }}</td>
+                                        <td>{{ car.year_of_make }}</td>
+                                        <td>{{ car.registration_number }}</td>
+                                        {% if car.has_events %}
+                                            <td>
+                                                {% for event in car.get_events %}
+                                                    {{ event.created_at|date:"Y-m-d" }} {{ event.event_text }}<br>
+                                                {% endfor %}
+                                            </td>
+                                        {% else %}
+                                            <td>-</td>
+                                        {% endif %}
+                                        {% if car.in_service %}
+                                            <td><a href="{% url 'live_car' pk=car.pk %}">Гледайте на живо!</a></td>
+                                        {% else %}
+                                            <td>Не</td>
+                                        {% endif %}
+                                    </tr>
+                                {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            {% else %}
+                <h2 class="h-lg text-center">Този профил не е свързан с никакви автомобили.</h2>
+                <p class="info text-center">При проблем може да ни изпратите съобщение от <a
+                        href="{% url 'contacts' %}" style="color: darkorange; text-decoration: underline;">тук</a>.</p>
+            {% endif %}
+        </div>
+    </div>
+</div>
+<!-- // Content  -->
+
+<!-- Footer -->
+<div class="page-footer">
+    <div class="footer-content">
+        <div class="footer-col-left">
+            <div class="inside">
+                <div class="footer-phone">
+                    <h2 class="h-phone">Позвънете: <span class="number">+359 882 366 633</span></h2>
+                </div>
+                <div class="contact-info"><i class="icon icon-locate"></i>Пловдив 4000, Кукленско шосе 24</div>
+                <div class="contact-info"><i class="icon icon-clock"></i>Понеделник-Събота <span class="color">7:00AM - 6:00PM</span><br>
+                    Неделя Затворено
+                </div>
+                <div class="contact-info"><i class="icon icon-email"></i><a href="mailto:info@autofix.bg">info-plovdiv@autofix.bg</a>
+                </div>
+                <div class="social-links">
+                    <ul>
+                        <li>
+                            <a class="icon icon-facebook-logo" href="#"></a>
+                        </li>
+                        <li>
+                            <a class="icon icon-twitter-logo" href="#"></a>
+                        </li>
+                        <li>
+                            <a class="icon icon-instagram-logo" href="#"></a>
+                        </li>
+                        <li>
+                            <a class="icon icon-google-plus-logo" href="#"></a>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+        <div class="footer-col-right">
+            <div id="footer-map" class="footer-map"></div>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <div class="container">
+            <div class="copyright">© 2023 Auto Fix, <span class="clearfix visible-xs"></span>All Rights Reserved</div>
+        </div>
+    </div>
+</div>
+<div class="back-to-top"><a href="#top"><span class="icon icon-transport"></span></a></div>
+<!-- //Footer -->
+<div class="darkout-menu"></div>
+
+<!-- External JavaScripts -->
+<script src="{% static '/js/jquery.js' %}"></script>
+<script src="{% static '/js/plugins/bootstrap.min.js' %}"></script>
+<script src="{% static '/js/plugins/slick.min.js' %}"></script>
+<script src="{% static '/js/plugins/jquery.form.js' %}"></script>
+<script src="{% static '/js/plugins/jquery.validate.min.js' %}"></script>
+<script src="{% static '/js/plugins/moment.js' %}"></script>
+<script src="{% static '/js/plugins/bootstrap-datetimepicker.min.js' %}"></script>
+<script src="{% static '/js/plugins/jquery.waypoints.min.js' %}"></script>
+<script src="{% static '/js/plugins/jquery.countTo.js' %}"></script>
+<!-- Custom JavaScripts -->
+<script src="{% static '/js/custom.js' %}"></script>
+<script src="{% static '/js/forms.js' %}"></script>
+
+<!-- pdf -->
+<script src="{% static 'pdf-plugins/datatables/jquery.dataTables.min.js' %}"></script>
+<script src="{% static 'pdf-plugins/datatables-bs4/js/dataTables.bootstrap4.min.js' %}"></script>
+<script src="{% static 'pdf-plugins/datatables-responsive/js/dataTables.responsive.min.js' %}"></script>
+<script src="{% static 'pdf-plugins/datatables-buttons/js/dataTables.buttons.min.js' %}"></script>
+<script src="{% static 'pdf-plugins/datatables-buttons/js/buttons.bootstrap4.min.js' %}"></script>
+<script src="{% static 'pdf-plugins/pdfmake/pdfmake.min.js' %}"></script>
+<script src="{% static 'pdf-plugins/pdfmake/vfs_fonts.js' %}"></script>
+<script src="{% static 'pdf-plugins/datatables-buttons/js/buttons.html5.min.js' %}"></script>
+<script src="{% static 'pdf-plugins/datatables-buttons/js/buttons.print.min.js' %}"></script>
+<script src="{% static 'pdf-plugins/datatables-buttons/js/buttons.colVis.min.js' %}"></script>
+
+
+<script>
+    $(function () {
+        $("#example1").DataTable({
+            "responsive": true, "lengthChange": false, "autoWidth": false,
+            "buttons": ["pdf"]
+        }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
+        $('#example2').DataTable({
+            "paging": true,
+            "lengthChange": false,
+            "searching": false,
+            "ordering": true,
+            "info": true,
+            "autoWidth": false,
+            "responsive": true,
+        });
+    });
+</script>
+</body>
+
+
+</html>

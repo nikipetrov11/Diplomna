@@ -1,0 +1,38 @@
+<!doctype html>
+{% load static %}
+<html lang="en">
+
+<head>
+    <title>Успешна регистрация</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="icon" href="{% static 'favicon.ico' %}">
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="{% static 'css/log-style.css' %}">
+</head>
+<body>
+<section class="ftco-section">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-6 text-center mb-5">
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-md-12 col-lg-6">
+                <div class="wrap">
+                    <div class="text-wrap-succes p-4 p-lg-5 text-center d-flex align-items-center">
+                        <div class="text w-100">
+                            <h2>Честито!</h2>
+                            <p>Успешна регистрация</p>
+                            <a href="{% url 'login' %}" class="btn btn-white btn-outline-white">Влез в профила</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+</body>
+
+</html>

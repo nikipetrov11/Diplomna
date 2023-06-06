@@ -1,0 +1,146 @@
+{% load static %}
+
+<nav class="navbar" id="slide-nav">
+    <div class="container">
+        <div class="header-info-mobile">
+            <div class="header-info-mobile-inside">
+                <p><i class="icon icon-locate"></i>Пловдив 4000, Кукленско шосе 24</p>
+                <p><i class="icon icon-phone"></i>+359 882 366 633</p>
+                <p><i class="icon icon-clock"></i>Работно време: 8:00AM - 7:00PM</p>
+                <p><i class="icon icon-email"></i><a
+                        href="mailto:info-plovdiv@autofix.bg">info-plovdiv@autofix.bg</a></p>
+            </div>
+        </div>
+        <div class="header-row">
+            <div class="header-info-toggle"><i class="icon-arrow_down js-info-toggle"></i></div>
+            <div class="logo">
+                <a href="{% url 'index' %}"><img src="{% static '/images/logo.png' %}" alt="Logo"></a>
+            </div>
+            <div class="header-right">
+                <button type="button" class="navbar-toggle"><i class="icon icon-lines-menu"></i></button>
+                <div class="mobile-cart">
+                    <div class="header-login"><a href="{% url 'login' %}" target="_blank"
+                                                 class="icon icon-people-1"></a>
+                    </div>
+                    <div class="header-cart">
+                        <a href="#" class="icon icon-shop-cart"></a>
+                        <span class="badge">2</span>
+                        <div class="header-cart-dropdown">
+                            <div class="prd-sm">
+                                <div class="prd-sm-img">
+                                    <a href="product.html"><img src="../static/images/shop-product-1.jpg"
+                                                                class="img-responsive" alt=""></a>
+                                </div>
+                                <div class="prd-sm-info">
+                                    <h3><a href="#">AUSTONE 165/70R12 77T-AU31 SP801</a></h3>
+                                    <div class="price">38.88 лв.</div>
+                                </div>
+                                <div class="prd-sm-delete"><i class="icon-close"></i></div>
+                            </div>
+                            <div class="prd-sm">
+                                <div class="prd-sm-img">
+                                    <a href="product.html"><img src="../static/images/shop-product-2.jpg"
+                                                                class="img-responsive" alt=""></a>
+                                </div>
+                                <div class="prd-sm-info">
+                                    <h3><a href="#">LINGLONG 155/80R13 84N XL-LI76 R701</a></h3>
+                                    <div class="price">188.79 лв.</div>
+                                </div>
+                                <div class="prd-sm-delete"><i class="icon-close"></i></div>
+                            </div>
+                            <div class="header-cart-total">
+                                <div class="pull-left">Тотал:</div>
+                                <div class="pull-right">227.67 лв.</div>
+                            </div>
+                            <a href="#" class="btn btn-md btn-invert btn-full"><span>Вашата количка</span></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="header-right-top">
+                    <div class="address">
+                        Работно време <span class="custom-color">8:00AM - 7:00PM</span>
+                    </div>
+                    <a class="appointment" href="{% url 'service_request' %}"
+                    ><i class="icon-shape icon"></i><span>Запазете час</span></a>
+                </div>
+                <div class="header-right-bottom">
+                    <div class="header-phone"><span class="text">ЗАЯВЕТЕ ВАШИЯ ЧАС СЕГА</span><span
+                            class="phone-number"><span class="code"> +359</span> 882 366 633</span>
+                    </div>
+                    {% if not user.is_authenticated %}
+                        <div class="header-login"><a href="{% url 'login' %}" target="_self"
+                                                     class="icon icon-people-1"></a>
+                        </div>
+                    {% endif %}
+                    <div class="header-cart">
+                        <a href="#" class="icon icon-shop-cart"></a>
+                        <span class="badge">3</span>
+                        <div class="header-cart-dropdown">
+                            <div class="prd-sm">
+                                <div class="prd-sm-img">
+                                    <a href="product.html"><img src="../static/images/shop-product-1.jpg"
+                                                                class="img-responsive" alt=""></a>
+                                </div>
+                                <div class="prd-sm-info">
+                                    <h3><a href="#">AUSTONE 165/70R12 77T-AU31 SP801</a></h3>
+                                    <div class="price">38.88 лв.</div>
+                                </div>
+                                <div class="prd-sm-delete"><i class="icon-close"></i></div>
+                            </div>
+                            <div class="prd-sm">
+                                <div class="prd-sm-img">
+                                    <a href="product.html"><img src="../static/images/shop-product-2.jpg"
+                                                                class="img-responsive" alt=""></a>
+                                </div>
+                                <div class="prd-sm-info">
+                                    <h3><a href="#">LINGLONG 155/80R13 84N XL-LI76 R701</a></h3>
+                                    <div class="price">188.79 лв.</div>
+                                </div>
+                                <div class="prd-sm-delete"><i class="icon-close"></i></div>
+                            </div>
+                            <div class="header-cart-total">
+                                <div class="pull-left">Тотал:</div>
+                                <div class="pull-right">227.67 лв.</div>
+                            </div>
+                            <a href="#" class="btn btn-md btn-invert btn-full"><span>Вашата количка</span></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="slidemenu">
+            <div class="row">
+                <div class="col-md-11 fix-menu">
+                    <div class="close-menu"><i class="icon-close-cross"></i></div>
+                    <ul class="nav navbar-nav">
+                        <li {% if request.path == '/' %}class="active"{% endif %}><a href="{% url 'index' %}"><span>Начало</span></a>
+                        </li>
+                        <li {% if 'about' in request.path %}class="active"{% endif %}><a href="{% url 'about' %}"><span>За нас</span></a>
+                        </li>
+                        <li {% if 'price-and-discounts' in request.path %}class="active"{% endif %}><a
+                                href="{% url 'price_and_discount' %}"><span>Цени & Отстъпки</span></a></li>
+                        <li {% if 'service-info' in request.path %}class="active"{% endif %}><a
+                                href="{% url 'index_service_info' %}"><span>Услуги</span></a></li>
+                        <li {% if 'shop' in request.path %}class="active"{% endif %}><a href="{% url 'shop' %}"><span>Гуми</span></a>
+                        </li>
+                        <li {% if 'contact' in request.path %}class="active"{% endif %}><a
+                                href="{% url 'contacts' %}"><span>Контакти</span></a>
+                        </li>
+                        {% if user.is_superuser %}
+                            <li {% if 'admin' in request.path %}class="active"{% endif %}><a
+                                    href="{% url 'admin_panel' %}"><span>Админ</span></a></li>
+                        {% endif %}
+                        {% if user.is_authenticated and not user.is_superuser %}
+                            <li {% if 'my-cars' in request.path %}class="active"{% endif %}><a
+                                    href="{% url 'user_car_list' %}"><span>Моите коли</span></a></li>
+                        {% endif %}
+                        {% if user.is_authenticated %}
+                            <li><a href="{% url 'logout' %}"><span>Изход от акаунт</span></a></li>
+                        {% endif %}
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>

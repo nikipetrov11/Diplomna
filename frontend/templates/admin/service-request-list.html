@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="html 5 template">
+    <meta name="author" content="tonytemplates.com">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="icon" href="{% static 'favicon.ico' %}">
+    <title>Моя профил</title>
+    <!-- Bootstrap core CSS -->
+    <link href="{% static '/css/main.css' %}" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Muli:100,100i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+          rel="stylesheet">
+    <!-- Google map -->
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js"></script>
+</head>
+
+<body>
+<!-- Header -->
+<header class="page-header header-sticky">
+    {% include 'navigation.html' %}
+</header>
+<!-- // Header -->
+<!-- Content  -->
+<div id="pageTitle">
+    <div class="container">
+        <!-- Breadcrumbs Block -->
+        <div class="breadcrumbs">
+            <ul class="breadcrumb">
+                <li><a href="{% url 'index' %}">Начало</a></li>
+                <li><a href="{% url 'admin_panel' %}">Админ панел</a></li>
+                <li>Запитвания за сервиз</li>
+            </ul>
+        </div>
+        <!-- //Breadcrumbs Block -->
+    </div>
+</div>
+<div id="pageContent">
+    <div class="block admin-panel">
+        <div class="container">
+            <div class="col-lg-3 col-md-4">
+                <div class="dashboard_menu">
+                    {% include 'admin/admin-navigation.html' %}
+                </div>
+            </div>
+            <div class="col-lg-9 col-md-8 mt-5 mt-lg-0 mt-md-0">
+                <div class="tab-content dashboard_content">
+                    <div id="requests" role="tabpanel" aria-labelledby="requests-tab">
+                        <div class="card border-0">
+                            <h5 class="font-w-6">Запитвания за сервиз:</h5>
+                            <div class="filters-by-category">
+                                <ul>
+                                    <li><a href="{% url 'not_seen_admin_service_request_list' %}">Нови</a></li>
+                                    <li><a href="{% url 'admin_service_request_list' %}" class="selected">Всички</a>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <div class="card-body" id="printTable">
+                                <div class="table-responsive" style="overflow-x: initial;">
+                                    <table class="table">
+                                        <thead>
+                                        <tr>
+                                            <th class="bold-font">Потребител</th>
+                                            <th class="bold-font">Име</th>
+                                            <th class="bold-font">Email</th>
+                                            <th class="bold-font">Телефон</th>
+                                            <th class="bold-font">Причина</th>
+                                            <th class="bold-font">Видяно</th>
+                                            <th class="bold-font">Виж повече</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+
+                                        <!-- this <tr> tag is not displayed. Displayed elements are in the for loop -->
+                                        <tr style="display: none;">
+                                            <td>Anonymous</td>
+                                            <td>Vasko Ivanov</td>
+                                            <td>vasko@mail.com</td>
+                                            <td>1231413342</td>
+                                            <td>fdsgfdgdfgdfgadgdefd</td>
+                                            <td><i class="icon icon-mark" style="color: green;"></i></td>
+                                            <td>
+                                                <div class="form-popup-wrap"><a
+                                                        class="btn form-popup-link view-details-admin" href="#"><span>View</span></a>
+                                                    <div class="form-popup" style="margin-left: -570.117px;">
+                                                        <div class="form-popup-close"><i class="icon-close-cross"></i>
+                                                        </div>
+                                                        <form id="quote-form" method="post"
+                                                              action="/admin/service-request-list/"
+                                                              novalidate="novalidate">
+                                                            <input type="hidden" name="csrfmiddlewaretoken"
+                                                                   value="MgCMmL5gq3K5wyWfHM0PpTbvKnHGbYARD5eI27JOHrsW6tRJKJzt6bfvkaXEvIsz">
+                                                            <div class="quote-form-inside" style="max-height: 988.6px;">
+                                                                <div class="form-inline">
+                                                                    <h5 class="font-w-6">Request from:
+                                                                        <span>Vasko Ivanov</span>
+                                                                    </h5>
+                                                                    <p><span class="bold-font">Email: </span>vasko@mail.com
+                                                                    </p><br>
+                                                                    <p><span class="bold-font">Phone: </span>1231413342
+                                                                    </p><br>
+                                                                    <p><span class="bold-font">Text: </span>fdsgfdgdfgdfgadgdefd
+                                                                    </p><br>
+                                                                </div>
+                                                                <div class="btn-inline">
+                                                                    <input type="hidden" name="pk" value="2">
+                                                                    <button class="btn btn-invert" type="submit"
+                                                                            name="toggle_button">
+
+                                                                        <span>Видяно</span>
+
+                                                                    </button>
+                                                                </div>
+                                                            </div>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        {% for request in service_requests %}
+                                            <tr>
+                                                {% if request.has_user %}
+                                                    <td>{{ request.user.username }}</td>
+                                                {% else %}
+                                                    <td>-</td>
+                                                {% endif %}
+                                                <td>{{ request.full_name }}</td>
+                                                <td>{{ request.email }}</td>
+                                                <td>{{ request.phone }}</td>
+                                                <td>{{ request.request_text }}</td>
+                                                {% if request.is_seen %}
+                                                    <td><i class="icon icon-mark" style="color: green;"></i></td>
+                                                {% else %}
+                                                    <td><i class="icon icon-close" style="color: red;"></i></td>
+                                                {% endif %}
+                                                <td>
+                                                    <div class="form-popup-wrap"><a
+                                                            class="btn form-popup-link view-details-admin"
+                                                            href="#"><span>Покажи още</span></a>
+                                                        <div class="form-popup">
+                                                            <div class="form-popup-close"><i
+                                                                    class="icon-close-cross"></i>
+                                                            </div>
+                                                            <form id="quote-form" method="post"
+                                                                  action="{% url 'admin_service_request_list' %}">
+                                                                {% csrf_token %}
+                                                                <div class="quote-form-inside">
+                                                                    <div class="form-inline">
+                                                                        <h5 class="font-w-6">Запитване от:
+                                                                            <span>{{ request.full_name }}</span>
+                                                                        </h5>
+                                                                        <p><span
+                                                                                class="bold-font">Email: </span>{{ request.email }}
+                                                                        </p><br>
+                                                                        <p><span
+                                                                                class="bold-font">Телефон: </span>{{ request.phone }}
+                                                                        </p><br>
+                                                                        <p><span
+                                                                                class="bold-font">Причина: </span>{{ request.request_text }}
+                                                                        </p><br>
+                                                                    </div>
+                                                                    <div class="btn-inline">
+                                                                        <input type="hidden" name="pk"
+                                                                               value="{{ request.pk }}">
+                                                                        <button class="btn btn-invert" type="submit"
+                                                                                name="toggle_button">
+                                                                            {% if request.is_seen %}
+                                                                                <span>Видяно</span>
+                                                                            {% else %}
+                                                                                <span>Маркирай като видяна</span>
+                                                                            {% endif %}
+                                                                        </button>
+                                                                    </div>
+                                                                </div>
+                                                            </form>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        {% endfor %}
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+<!-- // Content  -->
+<!-- Footer -->
+<div class="page-footer">
+    <div class="footer-content">
+        <div class="footer-col-left">
+            <div class="inside">
+                <div class="footer-phone">
+                    <h2 class="h-phone">Позвънете: <span class="number">+359 882 366 633</span></h2>
+                </div>
+                <div class="contact-info"><i class="icon icon-locate"></i>Пловдив 4000, Кукленско шосе 24</div>
+                <div class="contact-info"><i class="icon icon-clock"></i>Понеделник-Събота <span class="color">7:00AM - 6:00PM</span><br>
+                    Неделя Затворено
+                </div>
+                <div class="contact-info"><i class="icon icon-email"></i><a href="mailto:info@autofix.bg">info-plovdiv@autofix.bg</a>
+                </div>
+                <div class="social-links">
+                    <ul>
+                        <li>
+                            <a class="icon icon-facebook-logo" href="#"></a>
+                        </li>
+                        <li>
+                            <a class="icon icon-twitter-logo" href="#"></a>
+                        </li>
+                        <li>
+                            <a class="icon icon-instagram-logo" href="#"></a>
+                        </li>
+                        <li>
+                            <a class="icon icon-google-plus-logo" href="#"></a>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+        <div class="footer-col-right">
+            <div id="footer-map" class="footer-map"></div>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <div class="container">
+            <div class="copyright">© 2023 Auto Fix, <span class="clearfix visible-xs"></span>All Rights Reserved</div>
+        </div>
+    </div>
+</div>
+<div class="back-to-top"><a href="#top"><span class="icon icon-transport"></span></a></div>
+<!-- //Footer -->
+<div class="darkout-menu"></div>
+
+<!-- External JavaScripts -->
+<script src="{% static '/js/jquery.js' %}"></script>
+<script src="{% static '/js/plugins/bootstrap.min.js' %}"></script>
+<script src="{% static '/js/plugins/slick.min.js' %}"></script>
+<script src="{% static '/js/plugins/jquery.form.js' %}"></script>
+<script src="{% static '/js/plugins/jquery.validate.min.js' %}"></script>
+<script src="{% static '/js/plugins/moment.js' %}"></script>
+<script src="{% static '/js/plugins/bootstrap-datetimepicker.min.js' %}"></script>
+<script src="{% static '/js/plugins/jquery.waypoints.min.js' %}"></script>
+<script src="{% static '/js/plugins/jquery.countTo.js' %}"></script>
+<!-- Custom JavaScripts -->
+<script src="{% static '/js/custom.js' %}"></script>
+<script src="{% static '/js/forms.js' %}"></script>
+</body>
+
+
+</html>

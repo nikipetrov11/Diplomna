@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="html 5 template">
+    <meta name="author" content="tonytemplates.com">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="icon" href="{% static 'favicon.ico' %}">
+    <title>На живо</title>
+    <!-- Bootstrap core CSS -->
+    <link href="{% static '/css/main.css' %}" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Muli:100,100i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+          rel="stylesheet">
+    <!-- Google map -->
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js"></script>
+</head>
+
+<body>
+
+<!-- Header -->
+<header class="page-header header-sticky">
+    {% include 'navigation.html' %}
+</header>
+<!-- // Header -->
+<!-- Content  -->
+<div id="pageTitle">
+    <div class="container">
+        <!-- Breadcrumbs Block -->
+        <div class="breadcrumbs">
+            <ul class="breadcrumb">
+                <li><a href="{% url 'index' %}">Начало</a></li>
+                <li>Моите автомобили</li>
+                <li>Сервиз на живо</li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div id="pageContent">
+    <div class="block">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h2 class="h-lg text-center">Живо предаване на {{ car.registration_number }}.</h2>
+                    <img src="{% static 'images/live-car.jpg' %}" alt="Живото не работи мой"
+                         class="img-responsive mx-auto d-block"
+                         width="50%" style="display: block;margin-left: auto;margin-right: auto;">
+
+                    <div class="btn-play-vid" onclick="this.classList.toggle('active')">
+                        <div class="pl-bt" x="0" y="0" width="200" height="200"></div>
+                        <div class="icbt" width="200" height="200">
+                            <div class="bt-bx btn-eff-pl" x="0" y="0" width="200" height="200" fill="#fff"></div>
+                            <div class="bt-bx btn-eff" x="0" y="0" width="200" height="200" fill="#fff"></div>
+                        </div>
+                        <div class="btn-play"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- // Content  -->
+
+<!-- Footer -->
+<div class="page-footer">
+    <div class="footer-content">
+        <div class="footer-col-left">
+            <div class="inside">
+                <div class="footer-phone">
+                    <h2 class="h-phone">Позвънете: <span class="number">+359 882 366 633</span></h2>
+                </div>
+                <div class="contact-info"><i class="icon icon-locate"></i>Пловдив 4000, Кукленско шосе 24</div>
+                <div class="contact-info"><i class="icon icon-clock"></i>Понеделник-Събота <span class="color">7:00AM - 6:00PM</span><br>
+                    Неделя Затворено
+                </div>
+                <div class="contact-info"><i class="icon icon-email"></i><a href="mailto:info@autofix.bg">info-plovdiv@autofix.bg</a>
+                </div>
+                <div class="social-links">
+                    <ul>
+                        <li>
+                            <a class="icon icon-facebook-logo" href="#"></a>
+                        </li>
+                        <li>
+                            <a class="icon icon-twitter-logo" href="#"></a>
+                        </li>
+                        <li>
+                            <a class="icon icon-instagram-logo" href="#"></a>
+                        </li>
+                        <li>
+                            <a class="icon icon-google-plus-logo" href="#"></a>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+        <div class="footer-col-right">
+            <div id="footer-map" class="footer-map"></div>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <div class="container">
+            <div class="copyright">© 2023 Auto Fix, <span class="clearfix visible-xs"></span>All Rights Reserved</div>
+        </div>
+    </div>
+</div>
+<div class="back-to-top"><a href="#top"><span class="icon icon-transport"></span></a></div>
+<!-- //Footer -->
+<div class="darkout-menu"></div>
+
+<!-- External JavaScripts -->
+<script src="{% static '/js/jquery.js' %}"></script>
+<script src="{% static '/js/plugins/bootstrap.min.js' %}"></script>
+<script src="{% static '/js/plugins/slick.min.js' %}"></script>
+<script src="{% static '/js/plugins/jquery.form.js' %}"></script>
+<script src="{% static '/js/plugins/jquery.validate.min.js' %}"></script>
+<script src="{% static '/js/plugins/moment.js' %}"></script>
+<script src="{% static '/js/plugins/bootstrap-datetimepicker.min.js' %}"></script>
+<script src="{% static '/js/plugins/jquery.waypoints.min.js' %}"></script>
+<script src="{% static '/js/plugins/jquery.countTo.js' %}"></script>
+<!-- Custom JavaScripts -->
+<script src="{% static '/js/custom.js' %}"></script>
+<script src="{% static '/js/forms.js' %}"></script>
+
+</body>
+
+
+</html>

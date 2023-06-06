@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="html 5 template">
+    <meta name="author" content="tonytemplates.com">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="icon" href="{% static 'favicon.ico' %}">
+    <title>Услуги</title>
+    <!-- Bootstrap core CSS -->
+    <link href="{% static '/css/main.css' %}" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Muli:100,100i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+          rel="stylesheet">
+    <!-- Google map -->
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js"></script>
+</head>
+
+<body>
+<!-- Loader -->
+<div id="loader-wrapper">
+    <div class="loader">
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="subline"></div>
+        <div class="subline"></div>
+        <div class="subline"></div>
+        <div class="subline"></div>
+        <div class="subline"></div>
+        <div class="loader-circle-1">
+            <div class="loader-circle-2"></div>
+        </div>
+        <div class="needle"></div>
+        <div class="loading">Зареждане</div>
+    </div>
+</div>
+<!-- //Loader -->
+<!-- Header -->
+<header class="page-header header-sticky">
+    {% include 'navigation.html' %}
+</header>
+<!-- // Header -->
+<!-- Content  -->
+<div id="pageTitle">
+    <div class="container">
+        <!-- Breadcrumbs Block -->
+        <div class="breadcrumbs">
+            <ul class="breadcrumb">
+                <li><a href="{% url 'index' %}">Начало</a></li>
+                <li>Услуги</li>
+            </ul>
+        </div>
+        <!-- //Breadcrumbs Block -->
+        <h1>Услуги</h1>
+    </div>
+</div>
+<div id="pageContent">
+    <!-- Services -->
+    <div class="block">
+        <div class="container">
+            <h2 class="h-lg text-center">Какво правим</h2>
+            <p class="info text-center">Ние предлагаме пълна услуга за ремонт и поддръжка на автомобили</p>
+            <div class="tab-services">
+                <div class="tab-content">
+                    <div class="row services-alt tab-pane fade in active" id="services1">
+                        <div class="services-block-alt col-xs-6 col-sm-6 col-md-4">
+                            <div class="image">
+                                <a href="{% url '1_service_info' %}" class="image-scale-color"><img
+                                        src="../../static/images/services-img-01.jpg" alt=""></a>
+                                <i class="icon icon-oil"></i>
+                            </div>
+                            <div class="caption">
+                                <h3 class="title">Смяна на масло</h3>
+                                <div class="text">
+                                    Смяна на масло и всички течности по автомобила
+                                </div>
+                                <a href="{% url '1_service_info' %}"
+                                   class="services-link icon-arrowhead-pointing-to-the-right"></a>
+                            </div>
+                        </div>
+                        <div class="services-block-alt col-xs-6 col-sm-6 col-md-4">
+                            <div class="image">
+                                <a href="{% url '2_service_info' %}" class="image-scale-color"><img
+                                        src="../../static/images/services-img-02.jpg" alt=""></a>
+                                <i class="icon icon-disc-brake"></i>
+                            </div>
+                            <div class="caption">
+                                <h3 class="title">Смяна<br>на Дискове и Накладки</h3>
+                                <div class="text">
+                                    Спирачките се износват с течение на времето, което изисква обслужване
+                                </div>
+                                <a href="{% url '2_service_info' %}"
+                                   class="services-link icon-arrowhead-pointing-to-the-right"></a>
+                            </div>
+                        </div>
+                        <div class="services-block-alt col-xs-6 col-sm-6 col-md-4">
+                            <div class="image">
+                                <a href="{% url '3_service_info' %}" class="image-scale-color"><img
+                                        src="../../static/images/services-img-03.jpg" alt=""></a>
+                                <i class="icon icon-gearshift"></i>
+                            </div>
+                            <div class="caption">
+                                <h3 class="title">Смяна на масло на автоматична скоростна кутия</h3>
+                                <div class="text">
+                                    Трансмисията е сложен и важен компонент на вашия автомобил
+                                </div>
+                                <a href="{% url '3_service_info' %}"
+                                   class="services-link icon-arrowhead-pointing-to-the-right"></a>
+                            </div>
+                        </div>
+                        <div class="services-block-alt col-xs-6 col-sm-6 col-md-4">
+                            <div class="image">
+                                <a href="{% url '4_service_info' %}" class="image-scale-color"><img
+                                        src="../../static/images/services-img-04.jpg" alt=""></a>
+                                <i class="icon icon-car-wheel"></i>
+                            </div>
+                            <div class="caption">
+                                <h3 class="title">Гуми и Джанти</h3>
+                                <div class="text">
+                                    Най-добрият начин за минимизиране на повредите е извършването на своевременна
+                                    поддръжка
+                                </div>
+                                <a href="{% url '4_service_info' %}"
+                                   class="services-link icon-arrowhead-pointing-to-the-right"></a>
+                            </div>
+                        </div>
+                        <div class="services-block-alt col-xs-6 col-sm-6 col-md-4">
+                            <div class="image">
+                                <a href="{% url '5_service_info' %}" class="image-scale-color"><img
+                                        src="../../static/images/services-img-05.jpg" alt=""></a>
+                                <i class="icon icon-engine"></i>
+                            </div>
+                            <div class="caption">
+                                <h3 class="title">Ремонт на Двигателя</h3>
+                                <div class="text">
+                                    Сложен ремонт и скъп при навременни мерси се спестяват средства
+                                </div>
+                                <a href="{% url '5_service_info' %}"
+                                   class="services-link icon-arrowhead-pointing-to-the-right"></a>
+                            </div>
+                        </div>
+                        <div class="services-block-alt col-xs-6 col-sm-6 col-md-4">
+                            <div class="image">
+                                <a href="{% url '6_service_info' %}" class="image-scale-color"><img
+                                        src="../../static/images/services-img-06.jpg" alt=""></a>
+                                <i class="icon icon-exhaust-pipe"></i>
+                            </div>
+                            <div class="caption">
+                                <h3 class="title">Изпускателна система </h3>
+                                <div class="text">
+                                    Ограничете шума при навременна интервенция на системата за газове на автомобила
+                                </div>
+                                <a href="{% url '6_service_info' %}"
+                                   class="services-link icon-arrowhead-pointing-to-the-right"></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row services-alt tab-pane fade" id="services2">
+                        <div class="services-block-alt col-xs-6 col-sm-6 col-md-4">
+                            <div class="image">
+                                <a href="{% url '7_service_info' %}" class="image-scale-color"><img
+                                        src="../../static/images/services-img-07.jpg" alt=""></a>
+                                <i class="icon icon-engine"></i>
+                            </div>
+                            <div class="caption">
+                                <h3 class="title">Смяна на ангренаж</h3>
+                                <div class="text">
+                                    Навременна смяна на ремъка може да допринесе до дълъг живот на двигателя
+                                </div>
+                                <a href="{% url '7_service_info' %}"
+                                   class="services-link icon-arrowhead-pointing-to-the-right"></a>
+                            </div>
+                        </div>
+                        <div class="services-block-alt col-xs-6 col-sm-6 col-md-4">
+                            <div class="image">
+                                <a href="{% url '8_service_info' %}" class="image-scale-color"><img
+                                        src="../../static/images/services-img-08.jpg" alt=""></a>
+                                <i class="icon icon-engine"></i>
+                            </div>
+                            <div class="caption">
+                                <h3 class="title">Смяна на амортисьори</h3>
+                                <div class="text">
+                                    Амортисьорът контролира нежеланото движение на каросерията на автомобила, като
+                                    контролира движението на колелата.
+                                </div>
+                                <a href="{% url '8_service_info' %}"
+                                   class="services-link icon-arrowhead-pointing-to-the-right"></a>
+                            </div>
+                        </div>
+                        <div class="services-block-alt col-xs-6 col-sm-6 col-md-4">
+                            <div class="image">
+                                <a href="{% url '9_service_info' %}" class="image-scale-color"><img
+                                        src="../../static/images/services-img-09.jpg" alt=""></a>
+                                <i class="icon icon-engine"></i>
+                            </div>
+                            <div class="caption">
+                                <h3 class="title">Компютърна диагностика</h3>
+                                <div class="text">
+                                    Проверка за грешки и неизправности по автомобила
+                                </div>
+                                <a href="{% url '9_service_info' %}"
+                                   class="services-link icon-arrowhead-pointing-to-the-right"></a>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <ul class="nav nav-pills">
+                    <li class="active"><a data-toggle="pill" href="#services1">1</a></li>
+                    <li><a data-toggle="pill" href="#services2">2</a></li>
+                </ul>
+            </div>
+            <div class="divider-lg"></div>
+            <div class="text-center">
+                <h2 class="h-lg">Нуждаете се от помощ за вашия автомобил? <span class="color">Ще го оправим</span></h2>
+                <p class="info">Ние сме специализирани в отстраняването на щети при инциденти на превозни средства.
+                    Всъщност ние сме втората по големина мрежа за ремонт на щети при инциденти.</p>
+                <h2 class="h-phone">Тел: +359 882 366 633</h2>
+                <div class="btn-inline">
+                    <div class="btn-inline"><a class="btn btn-invert"
+                                               href="{% url 'contacts' %}"><span>Имате нужда от помощ?</span></a></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- //Services -->
+    <!-- Services List Block -->
+    <div class="block bg-1">
+        <div class="container">
+            <h2 class="h-lg text-center">Нашите <span class="color">Услуги</span></h2>
+            <p class="info text-center">По-долу са някои от услуги за вашия автомобил, които предлагаме в Ауто Фикс -
+                Пловдив:</p>
+            <div class="row" id="slideMobile">
+                <div class="col-sm-6 col-md-4">
+                    <ul class="marker-list">
+                        <li>Автомобилна диагностика</li>
+                        <li>DTC сканиране на грешки</li>
+                        <li>Поддръжка на електронна система за впръскване</li>
+                        <li>Поддръжка, препоръчана от производителя</li>
+                        <li>Mantenimiento Recomendado por el Fabricante</li>
+                        <li>Поддръжка климатик</li>
+                        <li>Ремонт на климатичната система</li>
+                        <li>Ремонт на горивната система</li>
+                    </ul>
+                </div>
+                <div class="col-sm-6 col-md-4 view-more-mobile">
+                    <ul class="marker-list">
+                        <li>Тест на сензорите</li>
+                        <li>Поддръжка на окачване</li>
+                        <li>Проверка на стартера и алтернатора</li>
+                        <li>Автомобилна експертиза</li>
+                        <li>Поддръжка на въздушни възглавници</li>
+                        <li>Смяна на разпределителен ремък</li>
+                        <li>Обща превантивна поддръжка</li>
+                        <li>Инспекция на емисиите</li>
+                    </ul>
+                </div>
+                <div class="col-sm-6 col-md-4 view-more-mobile view-more-tablet">
+                    <ul class="marker-list">
+                        <li>Поддръжка на ABS система</li>
+                        <li>Диагностика на акумулаторната батерия</li>
+                        <li>Смяна на масло</li>
+                        <li>Смяна на съединител</li>
+                        <li>Поддръжка на окачване и кормилно управление</li>
+                        <li>Смяна на гуми</li>
+                        <li>Cambio de Embrague</li>
+                        <li>ГТП - Пловдив</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="text-center"><a href="#slideMobile" class="view-more-link color"><span class="more">Todos los Servicios</span><span
+                    class="less">Ocultar Todos los Servicios</span></a>
+            </div>
+        </div>
+    </div>
+    <!-- //Services List Block -->
+    <!-- Block -->
+    <div class="block">
+        <div class="container">
+            <div class="text-appointment">
+                <h2 class="h-lg">Уговорете <span class="color">Вашия Час</span> Сега</h2>
+                <p class="info">Вашият специалист по ремонт &amp; поддръжка на автомобили </p>
+                <h2 class="h-phone">Тел: +359 882 366 633</h2>
+                <div class="btn-inline">
+                    <a class="btn btn-invert" href="{% url 'service_request' %}"><span>Запазете час</span></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- // Block -->
+</div>
+<!-- // Content  -->
+<!-- Footer -->
+<div class="page-footer">
+    <div class="footer-content">
+        <div class="footer-col-left">
+            <div class="inside">
+                <div class="footer-phone">
+                    <h2 class="h-phone">Позвънете: <span class="number">+359 882 366 633</span></h2>
+                </div>
+                <div class="contact-info"><i class="icon icon-locate"></i>Пловдив 4000, Кукленско шосе 24</div>
+                <div class="contact-info"><i class="icon icon-clock"></i>Понеделник-Събота <span class="color">7:00AM - 6:00PM</span><br>
+                    Неделя Затворено
+                </div>
+                <div class="contact-info"><i class="icon icon-email"></i><a href="mailto:info@autofix.bg">info-plovdiv@autofix.bg</a>
+                </div>
+                <div class="social-links">
+                    <ul>
+                        <li>
+                            <a class="icon icon-facebook-logo" href="#"></a>
+                        </li>
+                        <li>
+                            <a class="icon icon-twitter-logo" href="#"></a>
+                        </li>
+                        <li>
+                            <a class="icon icon-instagram-logo" href="#"></a>
+                        </li>
+                        <li>
+                            <a class="icon icon-google-plus-logo" href="#"></a>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+        <div class="footer-col-right">
+            <div id="footer-map" class="footer-map"></div>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <div class="container">
+            <div class="copyright">© 2023 Auto Fix, <span class="clearfix visible-xs"></span>All Rights Reserved</div>
+        </div>
+    </div>
+</div>
+<div class="back-to-top"><a href="#top"><span class="icon icon-transport"></span></a></div>
+<!-- //Footer -->
+<div class="darkout-menu"></div>
+
+<!-- External JavaScripts -->
+<script src="{% static '/js/jquery.js' %}"></script>
+<script src="{% static '/js/plugins/bootstrap.min.js' %}"></script>
+<script src="{% static '/js/plugins/slick.min.js' %}"></script>
+<script src="{% static '/js/plugins/jquery.form.js' %}"></script>
+<script src="{% static '/js/plugins/jquery.validate.min.js' %}"></script>
+<script src="{% static '/js/plugins/moment.js' %}"></script>
+<script src="{% static '/js/plugins/bootstrap-datetimepicker.min.js' %}"></script>
+<script src="{% static '/js/plugins/jquery.waypoints.min.js' %}"></script>
+<script src="{% static '/js/plugins/jquery.countTo.js' %}"></script>
+<!-- Custom JavaScripts -->
+<script src="{% static '/js/custom.js' %}"></script>
+<script src="{% static '/js/forms.js' %}"></script>
+</body>
+
+
+</html>

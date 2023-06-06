@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <div class="text-center">
+        <div class="bg-white badge text-wrap" style="color: black; margin-top: 1%; margin-bottom: 1%">
+            <h1 class="text-center">Invited users requests:</h1>
+        </div>
+    </div>
+
+    {% if invitedusercarrequest_list %}
+        <table class="table table-striped table-dark">
+        <thead>
+        <tr>
+            <th>User</th>
+            <th>car reg number</th>
+            <th>other info</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for request in invitedusercarrequest_list %}
+            <tr>
+                <td>{{ request.user.email }}</td>
+                <td>{{ request.car_registration_number }}</td>
+                <td>{{ request.other_info }}</td>
+            </tr>
+        {% endfor %}
+    {% else %}
+        <h1>No Invited users car requests found</h1>
+    {% endif %}
+</tbody>
+</table>
+
+{% endblock %}
